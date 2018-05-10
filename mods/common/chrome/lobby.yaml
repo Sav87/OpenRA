@@ -23,7 +23,7 @@ Background@SERVER_LOBBY:
 			Width: 178
 			Height: 25
 			Font: Bold
-			Text: Slot Admin
+			Text: @SERVER-LOBBY-SLOTS-DROPDOWNBUTTON-TEXT@
 		Container@SKIRMISH_TABS:
 			Visible: False
 			Children:
@@ -33,21 +33,21 @@ Background@SERVER_LOBBY:
 					Width: 134
 					Height: 31
 					Font: Bold
-					Text: Players
+					Text: @SKIRMISH-TABS-PLAYERS-TAB-TEXT@
 				Button@OPTIONS_TAB:
 					X: 337
 					Y: 285
 					Width: 133
 					Height: 31
 					Font: Bold
-					Text: Options
+					Text: @SKIRMISH-TABS-OPTIONS-TAB-TEXT@
 				Button@MUSIC_TAB:
 					X: 470
 					Y: 285
 					Width: 133
 					Height: 31
 					Font: Bold
-					Text: Music
+					Text: @SKIRMISH-TABS-MUSIC-TAB-TEXT@
 		Container@MULTIPLAYER_TABS:
 			Visible: False
 			Children:
@@ -57,28 +57,28 @@ Background@SERVER_LOBBY:
 					Width: 100
 					Height: 31
 					Font: Bold
-					Text: Players
+					Text: @MULTIPLAYER-TABS-PLAYERS-TAB-TEXT@
 				Button@OPTIONS_TAB:
 					X: 303
 					Y: 285
 					Width: 100
 					Height: 31
 					Font: Bold
-					Text: Options
+					Text: @MULTIPLAYER-TABS-OPTIONS-TAB-TEXT@
 				Button@MUSIC_TAB:
 					X: 403
 					Y: 285
 					Width: 100
 					Height: 31
 					Font: Bold
-					Text: Music
+					Text: @MULTIPLAYER-TABS-MUSIC-TAB-TEXT@
 				Button@SERVERS_TAB:
 					X: 503
 					Y: 285
 					Width: 100
 					Height: 31
 					Font: Bold
-					Text: Servers
+					Text: @MULTIPLAYER-TABS-SERVERS-TAB-TEXT@
 		Container@TOP_PANELS_ROOT:
 			X: 20
 			Y: 67
@@ -89,7 +89,7 @@ Background@SERVER_LOBBY:
 			Y: 291
 			Width: 174
 			Height: 25
-			Text: Change Map
+			Text: @SERVER-LOBBY-CHANGEMAP-BUTTON-TEXT@
 			Font: Bold
 		Container@LOBBYCHAT:
 			X: 20
@@ -138,20 +138,20 @@ Background@SERVER_LOBBY:
 							Width: 45
 							Height: 25
 							Align: Right
-							Text: Chat:
+							Text: @LOBBYCHAT-LABEL-CHATTYPE-TEXT@
 		Button@START_GAME_BUTTON:
 			X: PARENT_RIGHT - WIDTH - 150
 			Y: PARENT_BOTTOM - HEIGHT - 20
 			Width: 120
 			Height: 25
-			Text: Start Game
+			Text: @SERVER-LOBBY-START-GAME-BUTTON-TEXT@
 			Font: Bold
 		Button@DISCONNECT_BUTTON:
 			X: PARENT_RIGHT - WIDTH - 20
 			Y: PARENT_BOTTOM - HEIGHT - 20
 			Width: 120
 			Height: 25
-			Text: Leave Game
+			Text: @SERVER-LOBBY-DISCONNECT-BUTTON-TEXT@
 			Font: Bold
 		Container@FACTION_DROPDOWN_PANEL_ROOT:
 		TooltipContainer@TOOLTIP_CONTAINER:

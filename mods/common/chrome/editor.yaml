@@ -10,7 +10,7 @@ Background@NEW_MAP_BG:
 			Y: 20
 			Width: 300
 			Height: 25
-			Text: New Map
+			Text: @NEW-MAP-BG-LABEL-TITLE-TEXT@
 			Align: Center
 			Font: Bold
 		Label@TILESET_LABEL:
@@ -19,7 +19,7 @@ Background@NEW_MAP_BG:
 			Width: 95
 			Height: 25
 			Align: Right
-			Text: Tileset:
+			Text: @NEW-MAP-BG-TILESET-LABEL-TEXT@
 		DropDownButton@TILESET:
 			X: 120
 			Y: 60
@@ -31,7 +31,7 @@ Background@NEW_MAP_BG:
 			Width: 95
 			Height: 25
 			Align: Right
-			Text: Width:
+			Text: @NEW-MAP-BG-WIDTH-LABEL-TEXT@
 		TextField@WIDTH:
 			X: 120
 			Y: 95
@@ -39,14 +39,14 @@ Background@NEW_MAP_BG:
 			MaxLength: 3
 			Height: 25
 			Text: 128
-				Type: Integer
+			Type: Integer
 		Label@HEIGHT_LABEL:
 			X: 130
 			Y: 94
 			Width: 95
 			Height: 25
 			Align: Right
-			Text: Height:
+			Text: @NEW-MAP-BG-HEIGHT-LABEL-TEXT@
 		TextField@HEIGHT:
 			X: 230
 			Y: 95
@@ -60,7 +60,7 @@ Background@NEW_MAP_BG:
 			Y: PARENT_BOTTOM - 45
 			Width: 120
 			Height: 25
-			Text: Create
+			Text: @NEW-MAP-BG-CREATE-BUTTON-TEXT@
 			Font: Bold
 			Key: return
 		Button@CANCEL_BUTTON:
@@ -68,7 +68,7 @@ Background@NEW_MAP_BG:
 			Y: PARENT_BOTTOM - 45
 			Width: 120
 			Height: 25
-			Text: Cancel
+			Text: @NEW-MAP-BG-CANCEL-BUTTON-TEXT@
 			Font: Bold
 			Key: escape
 
@@ -84,7 +84,7 @@ Background@SAVE_MAP_PANEL:
 			Y: 20
 			Width: 250
 			Height: 25
-			Text: Save Map
+			Text: @SAVE-MAP-PANEL-LABEL-TITLE-TEXT@
 			Align: Center
 			Font: Bold
 		Label@TITLE_LABEL:
@@ -93,7 +93,7 @@ Background@SAVE_MAP_PANEL:
 			Width: 95
 			Height: 25
 			Align: Right
-			Text: Title:
+			Text: @SAVE-MAP-PANEL-TITLE-LABEL-TEXT@
 		TextField@TITLE:
 			X: 110
 			Y: 60
@@ -106,7 +106,7 @@ Background@SAVE_MAP_PANEL:
 			Width: 95
 			Height: 25
 			Align: Right
-			Text: Author:
+			Text: @SAVE-MAP-PANEL-AUTHOR-LABEL-TEXT@
 		TextField@AUTHOR:
 			X: 110
 			Y: 95
@@ -119,20 +119,20 @@ Background@SAVE_MAP_PANEL:
 			Width: 95
 			Height: 25
 			Align: Right
-			Text: Visibility:
+			Text: @SAVE-MAP-PANEL-VISIBILITY-LABEL-TEXT@
 		DropDownButton@VISIBILITY_DROPDOWN:
 			X: 110
 			Y: 130
 			Width: 220
 			Height: 25
-			Text: Map Visibility
+			Text: @SAVE-MAP-PANEL-VISIBILITY-DROPDOWN-TEXT@
 		Label@DIRECTORY_LABEL:
 			X: 10
 			Y: 164
 			Width: 95
 			Height: 25
 			Align: Right
-			Text: Directory:
+			Text: @SAVE-MAP-PANEL-DIRECTORY-LABEL-TEXT@
 		DropDownButton@DIRECTORY_DROPDOWN:
 			X: 110
 			Y: 165
@@ -144,13 +144,12 @@ Background@SAVE_MAP_PANEL:
 			Width: 95
 			Height: 25
 			Align: Right
-			Text: Filename:
+			Text: @SAVE-MAP-PANEL-FILENAME-LABEL-TEXT@
 		TextField@FILENAME:
 			X: 110
 			Y: 200
 			Width: 105
 			Height: 25
-			Type: Filename
 		DropDownButton@TYPE_DROPDOWN:
 			X: 220
 			Y: 200
@@ -161,14 +160,14 @@ Background@SAVE_MAP_PANEL:
 			Y: PARENT_BOTTOM - 45
 			Width: 120
 			Height: 25
-			Text: Save
+			Text: @SAVE-MAP-PANEL-SAVE-BUTTON-TEXT@
 			Font: Bold
 		Button@BACK_BUTTON:
 			X: 210
 			Y: PARENT_BOTTOM - 45
 			Width: 120
 			Height: 25
-			Text: Cancel
+			Text: @SAVE-MAP-PANEL-BACK-BUTTON-TEXT@
 			Font: Bold
 			Key: escape
 
@@ -253,7 +252,7 @@ Container@EDITOR_WORLD_ROOT:
 							Y: 10
 							Width: 55
 							Height: 25
-							Text: Search:
+							Text: @TILES-BG-SEARCH-LABEL-TEXT@
 							Align: Right
 							Font: TinyBold
 						TextField@SEARCH_TEXTFIELD:
@@ -265,7 +264,7 @@ Container@EDITOR_WORLD_ROOT:
 							Y: 34
 							Width: 55
 							Height: 25
-							Text: Filter:
+							Text: @TILES-BG-CATEGORIES-LABEL-TEXT@
 							Align: Right
 							Font: TinyBold
 						DropDownButton@CATEGORIES_DROPDOWN:
@@ -331,7 +330,7 @@ Container@EDITOR_WORLD_ROOT:
 							Y: 10
 							Width: 55
 							Height: 25
-							Text: Search:
+							Text: @ACTORS-BG-SEARCH-LABEL-TEXT@
 							Align: Right
 							Font: TinyBold
 						TextField@SEARCH_TEXTFIELD:
@@ -343,7 +342,7 @@ Container@EDITOR_WORLD_ROOT:
 							Y: 34
 							Width: 55
 							Height: 25
-							Text: Filter:
+							Text: @ACTORS-BG-CATEGORIES-LABEL-TEXT@
 							Align: Right
 							Font: TinyBold
 						DropDownButton@CATEGORIES_DROPDOWN:
@@ -356,7 +355,7 @@ Container@EDITOR_WORLD_ROOT:
 							Y: 58
 							Width: 55
 							Height: 25
-							Text: Owner:
+							Text: @ACTORS-BG-OWNERS-LABEL-TEXT@
 							Align: Right
 							Font: TinyBold
 						DropDownButton@OWNERS_DROPDOWN:
@@ -395,19 +394,19 @@ Container@EDITOR_WORLD_ROOT:
 					X: 0
 					Width: 70
 					Height: 25
-					Text: Tiles
+					Text: @MAP-EDITOR-TAB-CONTAINER-TILES-TAB-TEXT@
 					Font: Bold
 				Button@OVERLAYS_TAB:
 					X: 70
 					Width: 90
 					Height: 25
-					Text: Overlays
+					Text: @MAP-EDITOR-TAB-CONTAINER-OVERLAYS-TAB-TEXT@
 					Font: Bold
 				Button@ACTORS_TAB:
 					X: 160
 					Width: 70
 					Height: 25
-					Text: Actors
+					Text: @MAP-EDITOR-TAB-CONTAINER-ACTORS-TAB-TEXT@
 					Font: Bold
 		MenuButton@OPTIONS_BUTTON:
 			Logic: MenuButtonsChromeLogic
@@ -416,8 +415,8 @@ Container@EDITOR_WORLD_ROOT:
 			Pause: true
 			Width: 160
 			Height: 25
-			Text: Menu
-			TooltipText: Menu
+			Text: @EDITOR-WORLD-ROOT-OPTIONS-BUTTON-TEXT@
+			TooltipText: @EDITOR-WORLD-ROOT-OPTIONS-BUTTON-TOOLTIPTEXT@
 			TooltipContainer: TOOLTIP_CONTAINER
 			Font: Bold
 			Key: escape
@@ -425,15 +424,15 @@ Container@EDITOR_WORLD_ROOT:
 			X: 170
 			Width: 90
 			Height: 25
-			Text: Copy/Paste
+			Text: @EDITOR-WORLD-ROOT-COPYPASTE-BUTTON-TEXT@
 			Font: Bold
 		Button@GRID_BUTTON:
 			X: 270
 			Width: 70
 			Height: 25
-			Text: Grid
+			Text: @EDITOR-WORLD-ROOT-GRID-BUTTON-TEXT@
 			TooltipTemplate: BUTTON_TOOLTIP
-			TooltipText: Toggle the terrain grid
+			TooltipText: @EDITOR-WORLD-ROOT-GRID-BUTTON-TOOLTIPTEXT@
 			TooltipContainer: TOOLTIP_CONTAINER
 			Font: Bold
 			Key: f1
@@ -441,7 +440,7 @@ Container@EDITOR_WORLD_ROOT:
 			X: 345
 			Width: 50
 			Height: 25
-			Text: Zoom:
+			Text: @EDITOR-WORLD-ROOT-ZOOM-LABEL-TEXT@
 			Align: Right
 			Font: Bold
 			Contrast: true
@@ -478,14 +477,14 @@ ScrollPanel@ACTOR_CATEGORY_FILTER_PANEL:
 					Y: 2
 					Width: 60
 					Height: 25
-					Text: All
+					Text: @SELECT-CATEGORIES-BUTTONS-SELECT-ALL-TEXT@
 					Font: Bold
 				Button@SELECT_NONE:
 					X: PARENT_RIGHT - WIDTH - 34
 					Y: 2
 					Width: 60
 					Height: 25
-					Text: None
+					Text: @SELECT-CATEGORIES-BUTTONS-SELECT-NONE-TEXT@
 					Font: Bold
 		Checkbox@CATEGORY_TEMPLATE:
 			X: 5

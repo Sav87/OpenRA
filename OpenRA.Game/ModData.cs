@@ -59,6 +59,8 @@ namespace OpenRA
 			ModFiles.LoadFromManifest(Manifest);
 			Manifest.LoadCustomData(ObjectCreator);
 
+			LoadTranslations();
+
 			if (useLoadScreen)
 			{
 				LoadScreen = ObjectCreator.CreateObject<ILoadScreen>(Manifest.LoadScreen.Value);
@@ -139,7 +141,7 @@ namespace OpenRA
 
 		public IEnumerable<string> Languages { get; private set; }
 
-		void LoadTranslations(Map map)
+		void LoadTranslations()
 		{
 			var selectedTranslations = new Dictionary<string, string>();
 			var defaultTranslations = new Dictionary<string, string>();
@@ -150,7 +152,7 @@ namespace OpenRA
 				return;
 			}
 
-			var yaml = MiniYaml.Load(map, Manifest.Translations, map.TranslationDefinitions);
+			var yaml = MiniYaml.Load(ModFiles, Manifest.Translations, null);
 			Languages = yaml.Select(t => t.Key).ToArray();
 
 			foreach (var y in yaml)
@@ -187,7 +189,6 @@ namespace OpenRA
 			using (new Support.PerfTimer("Map"))
 				map = new Map(this, MapCache[uid].Package);
 
-			LoadTranslations(map);
 
 			// Reinitialize all our assets
 			InitializeLoaders(map);

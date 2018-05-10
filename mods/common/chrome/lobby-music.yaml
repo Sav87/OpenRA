@@ -11,20 +11,20 @@ Container@LOBBY_MUSIC_BIN:
 				Label@MUSIC:
 					Width: 268
 					Height: 25
-					Text: Music
+					Text: @LABEL-CONTAINER-MUSIC-TEXT@
 					Align: Center
 					Font: Bold
 				Label@TITLE:
 					X: 278
 					Width: 230
 					Height: 25
-					Text: Track
+					Text: @LABEL-CONTAINER-TITLE-TEXT@
 					Font: Bold
 				Label@TYPE:
 					X: PARENT_RIGHT - 63
 					Height: 25
 					Width: 50
-					Text: Length
+					Text: @LABEL-CONTAINER-TYPE-TEXT@
 					Font: Bold
 		Background@CONTROLS:
 			Background: dialog3
@@ -114,20 +114,20 @@ Container@LOBBY_MUSIC_BIN:
 					Width: 85
 					Height: 20
 					Font: Regular
-					Text: Shuffle
+					Text: @CONTROLS-SHUFFLE-TEXT@
 				Checkbox@REPEAT:
 					X: PARENT_RIGHT - 15 - WIDTH
 					Y: 150
 					Width: 70
 					Height: 20
 					Font: Regular
-					Text: Loop
+					Text: @CONTROLS-REPEAT-TEXT@
 				Label@VOLUME_LABEL:
 					Y: 180
 					Width: 65
 					Height: 25
 					Align: Right
-					Text: Volume:
+					Text: @CONTROLS-VOLUME-LABEL-TEXT@
 				Slider@MUSIC_SLIDER:
 					X: 70
 					Y: 186
@@ -165,16 +165,16 @@ Container@LOBBY_MUSIC_BIN:
 					Height: 25
 					Font: Bold
 					Align: Center
-					Text: Music Not Installed
+					Text: @NO-MUSIC-LABEL-TITLE-TEXT@
 				Label@DESCA:
 					Y: 95
 					Width: PARENT_RIGHT - 24
 					Height: 25
 					Align: Center
-					Text: The game music can be installed
+					Text: @NO-MUSIC-LABEL-DESCA-TEXT@
 				Label@DESCB:
 					Y: 115
 					Width: PARENT_RIGHT - 24
 					Height: 25
 					Align: Center
-					Text: from the "Manage Content" menu.
+					Text: @NO-MUSIC-LABEL-DESCB-TEXT@

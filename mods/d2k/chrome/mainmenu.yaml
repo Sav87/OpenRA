@@ -30,7 +30,7 @@ Container@MAINMENU:
 							Y: 20
 							Width: 200
 							Height: 30
-							Text: OpenRA
+							Text: @MAIN-MENU-MAINMENU-LABEL-TITLE-TEXT@
 							Align: Center
 							Font: Bold
 						Button@SINGLEPLAYER_BUTTON:
@@ -38,42 +38,42 @@ Container@MAINMENU:
 							Y: 60
 							Width: 140
 							Height: 30
-							Text: Singleplayer
+							Text: @MAIN-MENU-SINGLEPLAYER-BUTTON-TEXT@
 							Font: Bold
 						Button@MULTIPLAYER_BUTTON:
 							X: PARENT_RIGHT / 2 - WIDTH / 2
 							Y: 100
 							Width: 140
 							Height: 30
-							Text: Multiplayer
+							Text: @MAIN-MENU-MULTIPLAYER-BUTTON-TEXT@
 							Font: Bold
 						Button@SETTINGS_BUTTON:
 							X: PARENT_RIGHT / 2 - WIDTH / 2
 							Y: 140
 							Width: 140
 							Height: 30
-							Text: Settings
+							Text: @MAIN-MENU-SETTINGS-BUTTON-TEXT@
 							Font: Bold
 						Button@EXTRAS_BUTTON:
 							X: PARENT_RIGHT / 2 - WIDTH / 2
 							Y: 180
 							Width: 140
 							Height: 30
-							Text: Extras
+							Text: @MAIN-MENU-EXTRAS-BUTTON-TEXT@
 							Font: Bold
 						Button@CONTENT_BUTTON:
 							X: PARENT_RIGHT / 2 - WIDTH / 2
 							Y: 220
 							Width: 140
 							Height: 30
-							Text: Manage Content
+							Text: @MAIN-MENU-CONTENT-BUTTON-TEXT@
 							Font: Bold
 						Button@QUIT_BUTTON:
 							X: PARENT_RIGHT / 2 - WIDTH / 2
 							Y: 260
 							Width: 140
 							Height: 30
-							Text: Quit
+							Text: @MAIN-MENU-QUIT-BUTTON-TEXT@
 							Font: Bold
 				Background@SINGLEPLAYER_MENU:
 					Width: PARENT_RIGHT
@@ -84,7 +84,7 @@ Container@MAINMENU:
 							Y: 20
 							Width: 200
 							Height: 30
-							Text: Singleplayer
+							Text: @SINGLEPLAYER-MENU-SINGLEPLAYER-MENU-TITLE-TEXT@
 							Align: Center
 							Font: Bold
 						Button@SKIRMISH_BUTTON:
@@ -92,14 +92,14 @@ Container@MAINMENU:
 							Y: 60
 							Width: 140
 							Height: 30
-							Text: Skirmish
+							Text: @SINGLEPLAYER-MENU-SKIRMISH-BUTTON-TEXT@
 							Font: Bold
 						Button@MISSIONS_BUTTON:
 							X: PARENT_RIGHT / 2 - WIDTH / 2
 							Y: 100
 							Width: 140
 							Height: 30
-							Text: Missions
+							Text: @SINGLEPLAYER-MENU-MISSIONS-BUTTON-TEXT@
 							Font: Bold
 						Button@BACK_BUTTON:
 							X: PARENT_RIGHT / 2 - WIDTH / 2
@@ -107,7 +107,7 @@ Container@MAINMENU:
 							Y: 260
 							Width: 140
 							Height: 30
-							Text: Back
+							Text: @SINGLEPLAYER-MENU-BACK-BUTTON-TEXT@
 							Font: Bold
 				Background@EXTRAS_MENU:
 					Width: PARENT_RIGHT
@@ -118,7 +118,7 @@ Container@MAINMENU:
 							Y: 20
 							Width: 200
 							Height: 30
-							Text: Extras
+							Text: @EXTRAS-MENU-EXTRAS-MENU-TITLE-TEXT@
 							Align: Center
 							Font: Bold
 						Button@REPLAYS_BUTTON:
@@ -126,35 +126,35 @@ Container@MAINMENU:
 							Y: 60
 							Width: 140
 							Height: 30
-							Text: Replays
+							Text: @EXTRAS-MENU-REPLAYS-BUTTON-TEXT@
 							Font: Bold
 						Button@MUSIC_BUTTON:
 							X: PARENT_RIGHT / 2 - WIDTH / 2
 							Y: 100
 							Width: 140
 							Height: 30
-							Text: Music
+							Text: @EXTRAS-MENU-MUSIC-BUTTON-TEXT@
 							Font: Bold
 						Button@MAP_EDITOR_BUTTON:
 							X: PARENT_RIGHT / 2 - WIDTH / 2
 							Y: 140
 							Width: 140
 							Height: 30
-							Text: Map Editor
+							Text: @EXTRAS-MENU-MAP-EDITOR-BUTTON-TEXT@
 							Font: Bold
 						Button@ASSETBROWSER_BUTTON:
 							X: PARENT_RIGHT / 2 - WIDTH / 2
 							Y: 180
 							Width: 140
 							Height: 30
-							Text: Asset Browser
+							Text: @EXTRAS-MENU-ASSETBROWSER-BUTTON-TEXT@
 							Font: Bold
 						Button@CREDITS_BUTTON:
 							X: PARENT_RIGHT / 2 - WIDTH / 2
 							Y: 220
 							Width: 140
 							Height: 30
-							Text: Credits
+							Text: @EXTRAS-MENU-CREDITS-BUTTON-TEXT@
 							Font: Bold
 						Button@BACK_BUTTON:
 							X: PARENT_RIGHT / 2 - WIDTH / 2
@@ -162,7 +162,7 @@ Container@MAINMENU:
 							Y: 260
 							Width: 140
 							Height: 30
-							Text: Back
+							Text: @EXTRAS-MENU-BACK-BUTTON-TEXT@
 							Font: Bold
 				Background@MAP_EDITOR_MENU:
 					Width: PARENT_RIGHT
@@ -173,7 +173,7 @@ Container@MAINMENU:
 							Y: 20
 							Width: 200
 							Height: 30
-							Text: Map Editor
+							Text: @MAP-EDITOR-MENU-MAP-EDITOR-MENU-TITLE-TEXT@
 							Align: Center
 							Font: Bold
 						Button@NEW_MAP_BUTTON:
@@ -181,14 +181,14 @@ Container@MAINMENU:
 							Y: 60
 							Width: 140
 							Height: 30
-							Text: New Map
+							Text: @MAP-EDITOR-MENU-NEW-MAP-BUTTON-TEXT@
 							Font: Bold
 						Button@LOAD_MAP_BUTTON:
 							X: PARENT_RIGHT / 2 - WIDTH / 2
 							Y: 100
 							Width: 140
 							Height: 30
-							Text: Load Map
+							Text: @MAP-EDITOR-MENU-LOAD-MAP-BUTTON-TEXT@
 							Font: Bold
 						Button@BACK_BUTTON:
 							X: PARENT_RIGHT / 2 - WIDTH / 2
@@ -196,7 +196,7 @@ Container@MAINMENU:
 							Y: 260
 							Width: 140
 							Height: 30
-							Text: Back
+							Text: @MAP-EDITOR-MENU-BACK-BUTTON-TEXT@
 							Font: Bold
 		Background@SYSTEM_INFO_PROMPT:
 			X: (WINDOW_RIGHT - WIDTH) / 2
@@ -210,21 +210,21 @@ Container@MAINMENU:
 					Height: 25
 					Font: Bold
 					Align: Center
-					Text: System Information
+					Text: @SYSTEM-INFO-PROMPT-PROMPT-TITLE-TEXT@
 				Label@PROMPT_TEXT_A:
 					X: 15
 					Y: 50
 					Width: PARENT_RIGHT - 30
 					Height: 16
 					Align: Center
-					Text: We would like to collect some details that will help us optimize OpenRA.
+					Text: @SYSTEM-INFO-PROMPT-PROMPT-TEXT-A-TEXT@
 				Label@PROMPT_TEXT_B:
 					X: 15
 					Y: 68
 					Width: PARENT_RIGHT - 30
 					Height: 16
 					Align: Center
-					Text: With your permission, the following anonymous system data will be sent:
+					Text: @SYSTEM-INFO-PROMPT-PROMPT-TEXT-B-TEXT@
 				ScrollPanel@SYSINFO_DATA:
 					X: 20
 					Y: 98
@@ -244,13 +244,13 @@ Container@MAINMENU:
 					Width: 200
 					Height: 20
 					Font: Regular
-					Text: Send System Information
+					Text: @SYSTEM-INFO-PROMPT-SYSINFO-CHECKBOX-TEXT@
 				Button@BACK_BUTTON:
 					X: PARENT_RIGHT - WIDTH - 20
 					Y: PARENT_BOTTOM - 45
 					Width: 120
 					Height: 25
-					Text: Continue
+					Text: @SYSTEM-INFO-PROMPT-BACK-BUTTON-TEXT@
 					Font: Bold
 					Key: return
 		Background@NEWS_BG:
@@ -264,7 +264,7 @@ Container@MAINMENU:
 					Y: 15
 					Width: 400
 					Height: 25
-					Text: Battlefield News
+					Text: @NEWS-BG-NEWS-BUTTON-TEXT@
 					Font: Bold
 		Container@UPDATE_NOTICE:
 			X: (WINDOW_RIGHT - WIDTH) / 2
@@ -276,14 +276,14 @@ Container@MAINMENU:
 					Height: 25
 					Align: Center
 					Shadow: true
-					Text: You are running an outdated version of OpenRA.
+					Text: @UPDATE-NOTICE-A-TEXT@
 				Label@B:
 					Y: 20
 					Width: PARENT_RIGHT
 					Height: 25
 					Align: Center
 					Shadow: true
-					Text: Download the latest version from www.openra.net
+					Text: @UPDATE-NOTICE-B-TEXT@
 		Container@PERFORMANCE_INFO:
 			Logic: PerfDebugLogic
 			Children:

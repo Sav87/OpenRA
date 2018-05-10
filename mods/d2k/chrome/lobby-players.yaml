@@ -11,42 +11,42 @@ Container@LOBBY_PLAYER_BIN:
 				Label@LABEL_LOBBY_NAME:
 					Width: 180
 					Height: 25
-					Text: Name
+					Text: @LABEL-CONTAINER-LABEL-LOBBY-NAME-TEXT@
 					Align: Center
 					Font: Bold
 				Label@LABEL_LOBBY_COLOR:
 					X: 190
 					Width: 70
 					Height: 25
-					Text: Color
+					Text: @LABEL-CONTAINER-LABEL-LOBBY-COLOR-TEXT@
 					Align: Center
 					Font: Bold
 				Label@LABEL_LOBBY_FACTION:
 					X: 270
 					Width: 130
 					Height: 25
-					Text: Faction
+					Text: @LABEL-CONTAINER-LABEL-LOBBY-FACTION-TEXT@
 					Align: Center
 					Font: Bold
 				Label@LABEL_LOBBY_TEAM:
 					X: 410
 					Width: 48
 					Height: 25
-					Text: Team
+					Text: @LABEL-CONTAINER-LABEL-LOBBY-TEAM-TEXT@
 					Align: Center
 					Font: Bold
 				Label@LABEL_LOBBY_SPAWN:
 					X: 468
 					Width: 48
 					Height: 25
-					Text: Spawn
+					Text: @LABEL-CONTAINER-LABEL-LOBBY-SPAWN-TEXT@
 					Align: Center
 					Font: Bold
 				Label@LABEL_LOBBY_STATUS:
 					X: 525
 					Width: 20
 					Height: 25
-					Text: Ready
+					Text: @LABEL-CONTAINER-LABEL-LOBBY-STATUS-TEXT@
 					Align: Left
 					Font: Bold
 		ScrollPanel@LOBBY_PLAYERS:
@@ -86,13 +86,13 @@ Container@LOBBY_PLAYER_BIN:
 							X: 15
 							Width: 165
 							Height: 25
-							Text: Name
+							Text: @TEMPLATE-EDITABLE-PLAYER-NAME-TEXT@
 							MaxLength: 16
 						DropDownButton@SLOT_OPTIONS:
 							X: 15
 							Width: 165
 							Height: 25
-							Text: Name
+							Text: @TEMPLATE-EDITABLE-PLAYER-SLOT-OPTIONS-TEXT@
 							Font: Regular
 							Visible: false
 						DropDownButton@COLOR:
@@ -112,7 +112,7 @@ Container@LOBBY_PLAYER_BIN:
 							Height: 25
 							IgnoreChildMouseOver: true
 							TooltipContainer: TOOLTIP_CONTAINER
-							PanelRoot: FACTION_DROPDOWN_PANEL_ROOT # ensure that tooltips for the options are on top of the dropdown panel
+							PanelRoot: FACTION_DROPDOWN_PANEL_ROOT
 							Children:
 								Image@FACTIONFLAG:
 									X: 4
@@ -123,17 +123,17 @@ Container@LOBBY_PLAYER_BIN:
 									X: 34
 									Width: 70
 									Height: 25
-									Text: Faction
+									Text: @TEMPLATE-EDITABLE-PLAYER-FACTIONNAME-TEXT@
 						DropDownButton@TEAM_DROPDOWN:
 							X: 410
 							Width: 48
 							Height: 25
-							Text: Team
+							Text: @TEMPLATE-EDITABLE-PLAYER-TEAM-DROPDOWN-TEXT@
 						DropDownButton@SPAWN_DROPDOWN:
 							X: 468
 							Width: 48
 							Height: 25
-							Text: Spawn
+							Text: @TEMPLATE-EDITABLE-PLAYER-SPAWN-DROPDOWN-TEXT@
 						Checkbox@STATUS_CHECKBOX:
 							X: 525
 							Y: 2
@@ -180,7 +180,7 @@ Container@LOBBY_PLAYER_BIN:
 							Y: 0 - 1
 							Width: 165
 							Height: 25
-							Text: Name
+							Text: @TEMPLATE-NONEDITABLE-PLAYER-NAME-TEXT@
 						Button@KICK:
 							X: 155
 							Y: 2
@@ -207,13 +207,13 @@ Container@LOBBY_PLAYER_BIN:
 									X: 34
 									Width: 60
 									Height: 25
-									Text: Faction
+									Text: @FACTION-FACTIONNAME-TEXT@
 						Label@TEAM:
 							X: 410
 							Width: 23
 							Height: 25
 							Align: Center
-							Text: Team
+							Text: @TEMPLATE-NONEDITABLE-PLAYER-TEAM-TEXT@
 						Label@SPAWN:
 							X: 468
 							Width: 23
@@ -248,18 +248,18 @@ Container@LOBBY_PLAYER_BIN:
 							Y: 0 - 1
 							Width: 165
 							Height: 25
-							Text: Name
+							Text: @TEMPLATE-EMPTY-NAME-TEXT@
 						DropDownButton@SLOT_OPTIONS:
 							X: 15
 							Width: 165
 							Height: 25
-							Text: Name
+							Text: @TEMPLATE-EMPTY-SLOT-OPTIONS-TEXT@
 							Visible: false
 						Button@JOIN:
 							X: 190
 							Width: 326
 							Height: 25
-							Text: Play in this slot
+							Text: @TEMPLATE-EMPTY-JOIN-TEXT@
 				Container@TEMPLATE_EDITABLE_SPECTATOR:
 					X: 5
 					Width: 475
@@ -291,13 +291,13 @@ Container@LOBBY_PLAYER_BIN:
 							X: 15
 							Width: 165
 							Height: 25
-							Text: Name
+							Text: @TEMPLATE-EDITABLE-SPECTATOR-NAME-TEXT@
 							MaxLength: 16
 						Label@SPECTATOR:
 							X: 190
 							Width: 326
 							Height: 25
-							Text: Spectator
+							Text: @TEMPLATE-EDITABLE-SPECTATOR-SPECTATOR-TEXT@
 							Align: Center
 							Font: Bold
 						Checkbox@STATUS_CHECKBOX:
@@ -346,7 +346,7 @@ Container@LOBBY_PLAYER_BIN:
 							Y: 0 - 1
 							Width: 160
 							Height: 25
-							Text: Name
+							Text: @TEMPLATE-NONEDITABLE-SPECTATOR-NAME-TEXT@
 						Button@KICK:
 							X: 155
 							Y: 2
@@ -358,7 +358,7 @@ Container@LOBBY_PLAYER_BIN:
 							X: 190
 							Width: 326
 							Height: 25
-							Text: Spectator
+							Text: @TEMPLATE-NONEDITABLE-SPECTATOR-SPECTATOR-TEXT@
 							Align: Center
 							Font: Bold
 						Image@STATUS_IMAGE:
@@ -379,13 +379,13 @@ Container@LOBBY_PLAYER_BIN:
 							X: 15
 							Width: 165
 							Height: 20
-							Text: Allow Spectators?
+							Text: @TEMPLATE-NEW-SPECTATOR-TOGGLE-SPECTATORS-TEXT@
 							Font: Regular
 						Button@SPECTATE:
 							X: 190
 							Width: 326
 							Height: 25
-							Text: Spectate
+							Text: @TEMPLATE-NEW-SPECTATOR-SPECTATE-TEXT@
 							Font: Regular
 
 ScrollPanel@FACTION_DROPDOWN_TEMPLATE:

@@ -14,7 +14,7 @@ Background@ASSETBROWSER_PANEL:
 			Height: 25
 			Font: Bold
 			Align: Center
-			Text: Asset Browser
+			Text: @ASSETBROWSER-PANEL-ASSETBROWSER-TITLE-TEXT@
 		Label@SOURCE_SELECTOR_DESC:
 			X: 20
 			Y: 35
@@ -22,14 +22,14 @@ Background@ASSETBROWSER_PANEL:
 			Height: 25
 			Font: TinyBold
 			Align: Center
-			Text: Select asset source
+			Text: @ASSETBROWSER-PANEL-SOURCE-SELECTOR-DESC-TEXT@
 		DropDownButton@SOURCE_SELECTOR:
 			X: 20
 			Y: 60
 			Width: 160
 			Height: 25
 			Font: Bold
-			Text: Folders
+			Text: @ASSETBROWSER-PANEL-SOURCE-SELECTOR-TEXT@
 		ScrollPanel@ASSET_LIST:
 			X: 20
 			Y: 90
@@ -55,13 +55,12 @@ Background@ASSETBROWSER_PANEL:
 			Height: 25
 			Font: TinyBold
 			Align: Center
-			Text: Filter by name
+			Text: @ASSETBROWSER-PANEL-FILENAME-DESC-TEXT@
 		TextField@FILENAME_INPUT:
 			X: 20
 			Y: 395
 			Width: 160
 			Height: 25
-			Type: Filename
 		Label@PALETTE_DESC:
 			X: PARENT_RIGHT - WIDTH - 270
 			Y: 60
@@ -69,7 +68,7 @@ Background@ASSETBROWSER_PANEL:
 			Height: 25
 			Font: Bold
 			Align: Right
-			Text: Palette:
+			Text: @ASSETBROWSER-PANEL-PALETTE-DESC-TEXT@
 		DropDownButton@PALETTE_SELECTOR:
 			X: PARENT_RIGHT - WIDTH - 110
 			Y: 60
@@ -107,7 +106,7 @@ Background@ASSETBROWSER_PANEL:
 					Height: 330
 					Align: Center
 					Visible: false
-					Text: Error displaying file. See assetbrowser.log for details.
+					Text: @SPRITE-BG-ERROR-TEXT@
 		Container@FRAME_SELECTOR:
 			X: 190
 			Y: 425
@@ -202,4 +201,4 @@ Background@ASSETBROWSER_PANEL:
 			Width: 160
 			Height: 25
 			Font: Bold
-			Text: Close
+			Text: @ASSETBROWSER-PANEL-CLOSE-BUTTON-TEXT@

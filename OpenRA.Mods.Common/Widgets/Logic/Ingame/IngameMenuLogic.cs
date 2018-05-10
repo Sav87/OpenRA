@@ -85,7 +85,7 @@ namespace OpenRA.Mods.Common.Widgets.Logic
 			abortMissionButton.IsVisible = () => world.Type == WorldType.Regular;
 			abortMissionButton.IsDisabled = () => leaving;
 			if (world.IsGameOver)
-				abortMissionButton.GetText = () => "Leave";
+				abortMissionButton.GetText = () => FieldLoader.Translate("MENU-BUTTONS-ABORT-MISSION-ISGAMEOVER-TEXT");
 
 			abortMissionButton.OnClick = () =>
 			{
@@ -114,13 +114,13 @@ namespace OpenRA.Mods.Common.Widgets.Logic
 					}
 
 					ConfirmationDialogs.ButtonPrompt(
-						title: "Leave Mission",
-						text: "Leave this game and return to the menu?",
+						title: FieldLoader.Translate("CONFIRM-ABORT-MISSION-TITLE-TEXT"),
+						text: FieldLoader.Translate("CONFIRM-ABORT-MISSION-TEXT"),
 						onConfirm: onQuit,
 						onCancel: showMenu,
-						confirmText: "Leave",
-						cancelText: "Stay",
-						otherText: "Restart",
+						confirmText: FieldLoader.Translate("CONFIRM-ABORT-MISSION-BUTTON-CONFIRM-TEXT"),
+						cancelText: FieldLoader.Translate("CONFIRM-ABORT-MISSION-BUTTON-STAY-TEXT"),
+						otherText: FieldLoader.Translate("CONFIRM-ABORT-MISSION-BUTTON-RESTART-TEXT"),
 						onOther: restartAction);
 				}
 				else
@@ -133,8 +133,8 @@ namespace OpenRA.Mods.Common.Widgets.Logic
 			{
 				hideMenu = true;
 				ConfirmationDialogs.ButtonPrompt(
-					title: "Exit Map Editor",
-					text: "Exit and lose all unsaved changes?",
+					title: FieldLoader.Translate("CONFIRM-EXIT-EDITOR-TITLE-TEXT"),
+					text: FieldLoader.Translate("CONFIRM-EXIT-EDITOR-TEXT"),
 					onConfirm: onQuit,
 					onCancel: showMenu);
 			};
@@ -153,12 +153,12 @@ namespace OpenRA.Mods.Common.Widgets.Logic
 			{
 				hideMenu = true;
 				ConfirmationDialogs.ButtonPrompt(
-					title: "Surrender",
-					text: "Are you sure you want to surrender?",
+					title: FieldLoader.Translate("CONFIRM-SURRENDER-TITLE-TEXT"),
+					text: FieldLoader.Translate("CONFIRM-SURRENDER-TEXT"),
 					onConfirm: onSurrender,
 					onCancel: showMenu,
-					confirmText: "Surrender",
-					cancelText: "Stay");
+					confirmText: FieldLoader.Translate("CONFIRM-SURRENDER-BUTTON-CONFIRM-TEXT"),
+					cancelText: FieldLoader.Translate("CONFIRM-SURRENDER-BUTTON-STAY-TEXT"));
 			};
 
 			var saveMapButton = menu.Get<ButtonWidget>("SAVE_MAP");
@@ -205,7 +205,7 @@ namespace OpenRA.Mods.Common.Widgets.Logic
 			var resumeButton = menu.Get<ButtonWidget>("RESUME");
 			resumeButton.IsDisabled = () => leaving;
 			if (world.IsGameOver)
-				resumeButton.GetText = () => "Return to map";
+				resumeButton.GetText = () => FieldLoader.Translate("MENU-BUTTONS-RESUME-ISGAMEOVER-TEXT");
 
 			resumeButton.OnClick = closeMenu;
 

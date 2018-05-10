@@ -39,7 +39,10 @@ namespace OpenRA.Mods.Common.LoadScreens
 			if (r == null)
 				return;
 
-			if (info.ContainsKey("Text"))
+			var msg = FieldLoader.Translate("LOADSCREEN-MESSAGES-TEXT");
+			if (msg != "LOADSCREEN-MESSAGES-TEXT")
+				messages = msg.Split(',');
+			else if (info.ContainsKey("Text"))
 				messages = info["Text"].Split(',');
 
 			if (info.ContainsKey("Image"))

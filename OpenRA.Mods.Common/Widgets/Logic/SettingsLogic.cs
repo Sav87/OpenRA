@@ -169,13 +169,11 @@ namespace OpenRA.Mods.Common.Widgets.Logic
 
 			var windowModeDropdown = panel.Get<DropDownButtonWidget>("MODE_DROPDOWN");
 			windowModeDropdown.OnMouseDown = _ => ShowWindowModeDropdown(windowModeDropdown, ds);
-			windowModeDropdown.GetText = () => ds.Mode == WindowMode.Windowed ?
-				"Windowed" : ds.Mode == WindowMode.Fullscreen ? "Fullscreen (Legacy)" : "Fullscreen";
+			windowModeDropdown.GetText = () => FieldLoader.Translate("DISPLAY-MODE-DROPDOWN-{0}-TEXT".F(ds.Mode.ToString().ToUpper()));
 
 			var statusBarsDropDown = panel.Get<DropDownButtonWidget>("STATUS_BAR_DROPDOWN");
 			statusBarsDropDown.OnMouseDown = _ => ShowStatusBarsDropdown(statusBarsDropDown, gs);
-			statusBarsDropDown.GetText = () => gs.StatusBars.ToString() == "Standard" ?
-				"Standard" : gs.StatusBars.ToString() == "DamageShow" ? "Show On Damage" : "Always Show";
+			statusBarsDropDown.GetText = () => FieldLoader.Translate("DISPLAY-STATUS-BAR-DROPDOWN-{0}-TEXT".F(gs.StatusBars.ToString().ToUpper()));
 
 			// Update zoom immediately
 			var pixelDoubleCheckbox = panel.Get<CheckboxWidget>("PIXELDOUBLE_CHECKBOX");
@@ -399,11 +397,11 @@ namespace OpenRA.Mods.Common.Widgets.Logic
 
 			var middleMouseScrollDropdown = panel.Get<DropDownButtonWidget>("MIDDLE_MOUSE_SCROLL");
 			middleMouseScrollDropdown.OnMouseDown = _ => ShowMouseScrollDropdown(middleMouseScrollDropdown, gs, false);
-			middleMouseScrollDropdown.GetText = () => gs.MiddleMouseScroll.ToString();
+			middleMouseScrollDropdown.GetText = () => FieldLoader.Translate("INPUT-MOUSE-SCROLL-DROPDOWN-{0}-TEXT".F(gs.MiddleMouseScroll.ToString().ToUpper()));
 
 			var rightMouseScrollDropdown = panel.Get<DropDownButtonWidget>("RIGHT_MOUSE_SCROLL");
 			rightMouseScrollDropdown.OnMouseDown = _ => ShowMouseScrollDropdown(rightMouseScrollDropdown, gs, true);
-			rightMouseScrollDropdown.GetText = () => gs.RightMouseScroll.ToString();
+			rightMouseScrollDropdown.GetText = () => FieldLoader.Translate("INPUT-MOUSE-SCROLL-DROPDOWN-{0}-TEXT".F(gs.RightMouseScroll.ToString().ToUpper()));
 
 			var zoomModifierDropdown = panel.Get<DropDownButtonWidget>("ZOOM_MODIFIER");
 			zoomModifierDropdown.OnMouseDown = _ => ShowZoomModifierDropdown(zoomModifierDropdown, gs);
@@ -520,10 +518,10 @@ namespace OpenRA.Mods.Common.Widgets.Logic
 		{
 			var options = new Dictionary<string, MouseScrollType>()
 			{
-				{ "Disabled", MouseScrollType.Disabled },
-				{ "Standard", MouseScrollType.Standard },
-				{ "Inverted", MouseScrollType.Inverted },
-				{ "Joystick", MouseScrollType.Joystick },
+				{ FieldLoader.Translate("INPUT-MOUSE-SCROLL-DROPDOWN-DISABLED-TEXT"), MouseScrollType.Disabled },
+				{ FieldLoader.Translate("INPUT-MOUSE-SCROLL-DROPDOWN-STANDARD-TEXT"), MouseScrollType.Standard },
+				{ FieldLoader.Translate("INPUT-MOUSE-SCROLL-DROPDOWN-INVERTED-TEXT"), MouseScrollType.Inverted },
+				{ FieldLoader.Translate("INPUT-MOUSE-SCROLL-DROPDOWN-JOYSTICK-TEXT"), MouseScrollType.Joystick },
 			};
 
 			Func<string, ScrollItemWidget, ScrollItemWidget> setupItem = (o, itemTemplate) =>
@@ -589,9 +587,9 @@ namespace OpenRA.Mods.Common.Widgets.Logic
 		{
 			var options = new Dictionary<string, WindowMode>()
 			{
-				{ "Fullscreen", WindowMode.PseudoFullscreen },
-				{ "Fullscreen (Legacy)", WindowMode.Fullscreen },
-				{ "Windowed", WindowMode.Windowed },
+				{ FieldLoader.Translate("DISPLAY-MODE-DROPDOWN-PSEUDOFULLSCREEN-TEXT"), WindowMode.PseudoFullscreen },
+				{ FieldLoader.Translate("DISPLAY-MODE-DROPDOWN-FULLSCREEN-TEXT"), WindowMode.Fullscreen },
+				{ FieldLoader.Translate("DISPLAY-MODE-DROPDOWN-WINDOWED-TEXT"), WindowMode.Windowed },
 			};
 
 			Func<string, ScrollItemWidget, ScrollItemWidget> setupItem = (o, itemTemplate) =>
@@ -628,9 +626,9 @@ namespace OpenRA.Mods.Common.Widgets.Logic
 		{
 			var options = new Dictionary<string, StatusBarsType>()
 			{
-				{ "Standard", StatusBarsType.Standard },
-				{ "Show On Damage", StatusBarsType.DamageShow },
-				{ "Always Show", StatusBarsType.AlwaysShow },
+				{ FieldLoader.Translate("DISPLAY-STATUS-BAR-DROPDOWN-STANDARD-TEXT"), StatusBarsType.Standard },
+				{ FieldLoader.Translate("DISPLAY-STATUS-BAR-DROPDOWN-SHOWONDAMAGE-TEXT"), StatusBarsType.DamageShow },
+				{ FieldLoader.Translate("DISPLAY-STATUS-BAR-DROPDOWN-ALWAYSSHOW-TEXT"), StatusBarsType.AlwaysShow },
 			};
 
 			Func<string, ScrollItemWidget, ScrollItemWidget> setupItem = (o, itemTemplate) =>

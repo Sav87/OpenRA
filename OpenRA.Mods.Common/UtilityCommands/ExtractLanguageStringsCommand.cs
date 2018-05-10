@@ -37,12 +37,18 @@ namespace OpenRA.Mods.Common.UtilityCommands
 
 			foreach (var filename in modData.Manifest.ChromeLayout)
 			{
-				Console.WriteLine("# {0}:", filename);
-				var yaml = MiniYaml.FromFile(filename);
-				FromChromeLayout(ref yaml, null,
-					translatableFields.Select(t => t.Name).Distinct(), null);
-				using (var file = new StreamWriter(filename))
-					file.WriteLine(yaml.WriteToString());
+				string subPath = null;
+				OpenRA.FileSystem.IReadOnlyPackage parent;
+				if (modData.ModFiles.TryGetPackageContaining(filename, out parent, out subPath))
+				{
+					string rfilename = Path.Combine(parent.Name, subPath);
+					Console.WriteLine("# {0}:", rfilename);
+					var yaml = MiniYaml.FromFile(rfilename);
+					FromChromeLayout(ref yaml, null,
+						translatableFields.Select(t => t.Name).Distinct(), null);
+					using (var file = new StreamWriter(rfilename))
+						file.WriteLine(yaml.WriteToString());
+				}
 			}
 
 			// TODO: Properties can also be translated.

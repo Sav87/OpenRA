@@ -36,14 +36,14 @@ Background@MUSIC_PANEL:
 				Label@TITLE:
 					Width: 100
 					Height: 25
-					Text: Track
+					Text: @LABEL-CONTAINER-TITLE-TEXT@
 					Align: Center
 					Font: Bold
 				Label@TYPE:
 					X: PARENT_RIGHT - 85
 					Height: 25
 					Width: 50
-					Text: Length
+					Text: @LABEL-CONTAINER-TYPE-TEXT@
 					Align: Right
 					Font: Bold
 		Container@BUTTONS:
@@ -134,13 +134,13 @@ Background@MUSIC_PANEL:
 			Y: 335
 			Width: 85
 			Height: 20
-			Text: Shuffle
+			Text: @MUSIC-PANEL-SHUFFLE-TEXT@
 		Checkbox@REPEAT:
 			X: PARENT_RIGHT - 15 - WIDTH
 			Y: 335
 			Width: 70
 			Height: 20
-			Text: Loop
+			Text: @MUSIC-PANEL-REPEAT-TEXT@
 		Container@NO_MUSIC_LABEL:
 			X: 15
 			Y: 135
@@ -153,25 +153,25 @@ Background@MUSIC_PANEL:
 					Height: 25
 					Font: Bold
 					Align: Center
-					Text: Music Not Installed
+					Text: @NO-MUSIC-LABEL-TITLE-TEXT@
 				Label@DESCA:
 					Y: 20
 					Width: PARENT_RIGHT - 24
 					Height: 25
 					Align: Center
-					Text: The game music can be installed
+					Text: @NO-MUSIC-LABEL-DESCA-TEXT@
 				Label@DESCB:
 					Y: 40
 					Width: PARENT_RIGHT - 24
 					Height: 25
 					Align: Center
-					Text: from the "Manage Content" menu.
+					Text: @NO-MUSIC-LABEL-DESCB-TEXT@
 		Button@BACK_BUTTON:
 			X: PARENT_RIGHT - 140
 			Y: PARENT_BOTTOM - 45
 			Width: 120
 			Height: 25
-			Text: Close
+			Text: @MUSIC-PANEL-BACK-BUTTON-TEXT@
 			Font: Bold
 			Key: escape
 		Label@MUTE_LABEL:

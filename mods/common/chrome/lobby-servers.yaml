@@ -11,26 +11,26 @@ Container@LOBBY_SERVERS_BIN:
 					X: 5
 					Width: 255
 					Height: 25
-					Text: Server
+					Text: @LABEL-CONTAINER-NAME-TEXT@
 					Align: Center
 					Font: Bold
 				Label@PLAYERS:
 					X: 290
 					Width: 85
 					Height: 25
-					Text: Players
+					Text: @LABEL-CONTAINER-PLAYERS-TEXT@
 					Font: Bold
 				Label@LOCATION:
 					X: 380
 					Width: 110
 					Height: 25
-					Text: Location
+					Text: @LABEL-CONTAINER-LOCATION-TEXT@
 					Font: Bold
 				Label@STATUS:
 					X: 495
 					Width: 50
 					Height: 25
-					Text: Status
+					Text: @LABEL-CONTAINER-STATUS-TEXT@
 					Font: Bold
 		LogicTicker@NOTICE_WATCHER:
 		Background@NOTICE_CONTAINER:
@@ -43,21 +43,21 @@ Container@LOBBY_SERVERS_BIN:
 					Width: PARENT_RIGHT-10
 					Height: 18
 					Align: Center
-					Text: You are running an outdated version of OpenRA. Download the latest version from www.openra.net
+					Text: @NOTICE-CONTAINER-OUTDATED-VERSION-LABEL-TEXT@
 					Font: TinyBold
 				Label@UNKNOWN_VERSION_LABEL:
 					X: 5
 					Width: PARENT_RIGHT-10
 					Height: 18
 					Align: Center
-					Text: You are running an unrecognized version of OpenRA. Download the latest version from www.openra.net
+					Text: @NOTICE-CONTAINER-UNKNOWN-VERSION-LABEL-TEXT@
 					Font: TinyBold
 				Label@PLAYTEST_AVAILABLE_LABEL:
 					X: 5
 					Width: PARENT_RIGHT-10
 					Height: 18
 					Align: Center
-					Text: A preview of the next OpenRA release is available for testing. Download the playtest from www.openra.net
+					Text: @NOTICE-CONTAINER-PLAYTEST-AVAILABLE-LABEL-TEXT@
 					Font: TinyBold
 		ScrollPanel@SERVER_LIST:
 			Width: PARENT_RIGHT
@@ -94,7 +94,7 @@ Container@LOBBY_SERVERS_BIN:
 							ImageCollection: lobby-bits
 							TooltipContainer: TOOLTIP_CONTAINER
 							TooltipTemplate: SIMPLE_TOOLTIP
-							TooltipText: Requires Password
+							TooltipText: @LOBBY-SERVERS-BIN-PASSWORD-PROTECTED-TOOLTIPTEXT@
 						LabelWithTooltip@PLAYERS:
 							X: 290
 							Width: 85
@@ -120,7 +120,7 @@ Container@LOBBY_SERVERS_BIN:
 			Y: PARENT_BOTTOM + 5
 			Width: 147
 			Height: 25
-			Text: Filter Games
+			Text: @LOBBY-SERVERS-BIN-FILTERS-DROPDOWNBUTTON-TEXT@
 			Font: Bold
 		Button@RELOAD_BUTTON:
 			X: 152

@@ -34,7 +34,7 @@ Background@SETTINGS_PANEL:
 			Y: 20
 			Width: PARENT_RIGHT
 			Height: 25
-			Text: Settings
+			Text: @SETTINGS-PANEL-SETTINGS-LABEL-TITLE-TEXT@
 			Align: Center
 			Font: Bold
 		Button@RESET_BUTTON:
@@ -42,7 +42,7 @@ Background@SETTINGS_PANEL:
 			Y: PARENT_BOTTOM - 45
 			Width: 160
 			Height: 25
-			Text: Reset
+			Text: @SETTINGS-PANEL-RESET-BUTTON-TEXT@
 			Font: Bold
 		Button@BACK_BUTTON:
 			Key: escape
@@ -50,7 +50,7 @@ Background@SETTINGS_PANEL:
 			Y: PARENT_BOTTOM - 45
 			Width: 160
 			Height: 25
-			Text: Back
+			Text: @SETTINGS-PANEL-BACK-BUTTON-TEXT@
 			Font: Bold
 		Container@TAB_CONTAINER:
 			Y: 50
@@ -61,25 +61,25 @@ Background@SETTINGS_PANEL:
 					X: 115
 					Width: 90
 					Height: 25
-					Text: Display
+					Text: @TAB-CONTAINER-DISPLAY-TAB-TEXT@
 					Font: Bold
 				Button@AUDIO_TAB:
 					X: 205
 					Width: 90
 					Height: 25
-					Text: Audio
+					Text: @TAB-CONTAINER-AUDIO-TAB-TEXT@
 					Font: Bold
 				Button@INPUT_TAB:
 					X: 295
 					Width: 90
 					Height: 25
-					Text: Input
+					Text: @TAB-CONTAINER-INPUT-TAB-TEXT@
 					Font: Bold
 				Button@ADVANCED_TAB:
 					X: 385
 					Width: 90
 					Height: 25
-					Text: Advanced
+					Text: @TAB-CONTAINER-ADVANCED-TAB-TEXT@
 					Font: Bold
 		Container@DISPLAY_PANEL:
 			X: 5
@@ -93,14 +93,14 @@ Background@SETTINGS_PANEL:
 					Width: 45
 					Height: 25
 					Align: Right
-					Text: Mode:
+					Text: @DISPLAY-PANEL-MODE-LABEL-TEXT@
 				DropDownButton@MODE_DROPDOWN:
 					X: 160
 					Y: 40
 					Width: 170
 					Height: 25
 					Font: Regular
-					Text: Windowed
+					Text: @DISPLAY-MODE-DROPDOWN-WINDOWED-TEXT@
 				Container@WINDOW_RESOLUTION:
 					X: 330
 					Y: 40
@@ -138,41 +138,41 @@ Background@SETTINGS_PANEL:
 					Width: 200
 					Height: 20
 					Font: Regular
-					Text: Use Hardware Cursors
+					Text: @DISPLAY-PANEL-HARDWARECURSORS-CHECKBOX-TEXT@
 				Label@VIDEO_DESC:
 					Y: 93
 					Width: PARENT_RIGHT
 					Height: 25
 					Font: Tiny
 					Align: Center
-					Text: Mode, resolution, and cursor changes will be applied after the game is restarted
+					Text: @DISPLAY-PANEL-VIDEO-DESC-TEXT@
 				Checkbox@FRAME_LIMIT_CHECKBOX:
 					X: 15
 					Y: 125
 					Width: 200
 					Height: 20
 					Font: Regular
-					Text: Enable Frame Limiter
+					Text: @DISPLAY-PANEL-FRAME-LIMIT-CHECKBOX-TEXT@
 				Checkbox@PIXELDOUBLE_CHECKBOX:
 					X: 310
 					Y: 125
 					Width: 200
 					Height: 20
 					Font: Regular
-					Text: Enable Pixel Doubling
+					Text: @DISPLAY-PANEL-PIXELDOUBLE-CHECKBOX-TEXT@
 				Checkbox@CURSORDOUBLE_CHECKBOX:
 					X: 340
 					Y: 160
 					Width: 200
 					Height: 20
 					Font: Regular
-					Text: Also Double Cursor
+					Text: @DISPLAY-PANEL-CURSORDOUBLE-CHECKBOX-TEXT@
 				Label@FRAME_LIMIT_DESC_A:
 					X: 45
 					Y: 157
 					Width: 50
 					Height: 25
-					Text: Limit to
+					Text: @DISPLAY-PANEL-FRAME-LIMIT-DESC-A-TEXT@
 					Align: Right
 				TextField@FRAME_LIMIT_TEXTFIELD:
 					X: 100
@@ -185,16 +185,16 @@ Background@SETTINGS_PANEL:
 					X: 150
 					Y: 157
 					Height: 25
-					Text: FPS
+					Text: @DISPLAY-PANEL-FRAME-LIMIT-DESC-B-TEXT@
 				Checkbox@PLAYER_STANCE_COLORS_CHECKBOX:
 					X: 310
 					Y: 195
 					Width: 200
 					Height: 20
 					Font: Regular
-					Text: Player Stance Colors
+					Text: @DISPLAY-PANEL-PLAYER-STANCE-COLORS-CHECKBOX-TEXT@
 				Label@PLAYER:
-					Text: Player:
+					Text: @DISPLAY-PANEL-PLAYER-TEXT@
 					X: 15
 					Y: 205
 				TextField@PLAYERNAME:
@@ -220,58 +220,58 @@ Background@SETTINGS_PANEL:
 				Label@STATUS_BARS:
 					X: 310
 					Y: 275
-					Text: Status Bars:
+					Text: @DISPLAY-PANEL-STATUS-BARS-TEXT@
 				DropDownButton@STATUS_BAR_DROPDOWN:
 					X: 400
 					Y: 265
 					Width: 170
 					Height: 25
 					Font: Regular
-					Text: Standard
+					Text: @DISPLAY-PANEL-STATUS-BAR-DROPDOWN-TEXT@
 				Checkbox@DISPLAY_TARGET_LINES_CHECKBOX:
 					X: 310
 					Y: 230
 					Width: 200
 					Height: 20
 					Font: Regular
-					Text: Display Target Lines
+					Text: @DISPLAY-PANEL-DISPLAY-TARGET-LINES-CHECKBOX-TEXT@
 				Label@LOCALIZATION_TITLE:
 					Y: 270
 					Width: PARENT_RIGHT
 					Font: Bold
-					Text: Localization
+					Text: @DISPLAY-PANEL-LOCALIZATION-TITLE-TEXT@
 					Align: Center
-					Visible: false
+					Visible: true
 				Label@LANGUAGE_LABEL:
 					X: 230 - WIDTH - 5
 					Y: 289
 					Width: 75
 					Height: 25
 					Align: Right
-					Text: Language:
-					Visible: false
+					Text: @DISPLAY-PANEL-LANGUAGE-LABEL-TEXT@
+					Visible: true
 				DropDownButton@LANGUAGE_DROPDOWNBUTTON:
 					X: 230
 					Y: 290
 					Width: 200
 					Height: 25
-					Visible: false
+					Visible: true
 				Label@LANGUAGE_DESC_A:
 					Y: 310
 					Width: PARENT_RIGHT
 					Height: 25
 					Font: Tiny
 					Align: Center
-					Text: Language changes will be applied after the game is restarted
-					Visible: false
+					Text: @DISPLAY-PANEL-LANGUAGE-DESC-A-TEXT@
+					Visible: true
 				Label@LANGUAGE_DESC_B:
 					Y: 325
 					Width: PARENT_RIGHT
 					Height: 25
 					Font: Tiny
 					Align: Center
-					Text: Translations apply to text strings only; Speech and build icons will remain in English
-					Visible: false
+					Text: @DISPLAY-PANEL-LANGUAGE-DESC-B-TEXT@
+					Visible: true
 		Container@AUDIO_PANEL:
 			X: 5
 			Y: 50
@@ -284,7 +284,7 @@ Background@SETTINGS_PANEL:
 					Width: 95
 					Height: 25
 					Align: Right
-					Text: Sound Volume:
+					Text: @AUDIO-PANEL-SOUND-LABEL-TEXT@
 				Slider@SOUND_VOLUME:
 					X: PARENT_RIGHT - WIDTH - 15
 					Y: 43
@@ -297,21 +297,21 @@ Background@SETTINGS_PANEL:
 					Width: 200
 					Height: 20
 					Font: Regular
-					Text: Cash Ticks
+					Text: @AUDIO-PANEL-CASH-TICKS-TEXT@
 				Checkbox@MUTE_SOUND:
 					X: 15
 					Y: 70
 					Width: 200
 					Height: 20
 					Font: Regular
-					Text: Mute Sound
+					Text: @AUDIO-PANEL-MUTE-SOUND-TEXT@
 				Label@MUSIC_LABEL:
 					X: PARENT_RIGHT - WIDTH - 270
 					Y: 67
 					Width: 95
 					Height: 25
 					Align: Right
-					Text: Music Volume:
+					Text: @AUDIO-PANEL-MUSIC-LABEL-TEXT@
 				Slider@MUSIC_VOLUME:
 					X: PARENT_RIGHT - WIDTH - 15
 					Y: 73
@@ -324,7 +324,7 @@ Background@SETTINGS_PANEL:
 					Width: 95
 					Height: 25
 					Align: Right
-					Text: Video Volume:
+					Text: @AUDIO-PANEL-VIDEO-LABEL-TEXT@
 				Slider@VIDEO_VOLUME:
 					X: PARENT_RIGHT - WIDTH - 15
 					Y: 103
@@ -337,7 +337,7 @@ Background@SETTINGS_PANEL:
 					Width: 75
 					Height: 25
 					Align: Right
-					Text: Audio Device:
+					Text: @AUDIO-PANEL-AUDIO-DEVICE-LABEL-TEXT@
 				DropDownButton@AUDIO_DEVICE:
 					X: 190
 					Y: 245
@@ -349,7 +349,7 @@ Background@SETTINGS_PANEL:
 					Height: 25
 					Font: Tiny
 					Align: Center
-					Text: Device changes will be applied after the game is restarted
+					Text: @AUDIO-PANEL-AUDIO-DEVICE-DESC-TEXT@
 		Container@INPUT_PANEL:
 			X: 5
 			Y: 50
@@ -362,14 +362,14 @@ Background@SETTINGS_PANEL:
 					Width: 250
 					Height: 20
 					Font: Regular
-					Text: Left-click Orders
+					Text: @INPUT-PANEL-CLASSICORDERS-CHECKBOX-TEXT@
 				Label@MIDDLE_MOUSE_SCROLL_LABEL:
 					X: PARENT_RIGHT - WIDTH - 120
 					Y: 39
 					Width: 160
 					Height: 20
 					Font: Regular
-					Text: Middle-mouse Scrolling:
+					Text: @INPUT-PANEL-MIDDLE-MOUSE-SCROLL-LABEL-TEXT@
 					Align: Right
 				DropDownButton@MIDDLE_MOUSE_SCROLL:
 					X: PARENT_RIGHT - WIDTH - 15
@@ -383,7 +383,7 @@ Background@SETTINGS_PANEL:
 					Width: 160
 					Height: 20
 					Font: Regular
-					Text: Right-mouse Scrolling:
+					Text: @INPUT-PANEL-MIDDLE-MOUSE-SCROLL-LABEL-TEXTR@
 					Align: Right
 				DropDownButton@RIGHT_MOUSE_SCROLL:
 					X: PARENT_RIGHT - WIDTH - 15
@@ -397,7 +397,7 @@ Background@SETTINGS_PANEL:
 					Width: 160
 					Height: 20
 					Font: Regular
-					Text: Scroll-zoom Modifier:
+					Text: @INPUT-PANEL-ZOOM-MODIFIER-LABEL-TEXT@
 					Align: Right
 				DropDownButton@ZOOM_MODIFIER:
 					X: PARENT_RIGHT - WIDTH - 15
@@ -412,27 +412,27 @@ Background@SETTINGS_PANEL:
 					Width: 130
 					Height: 20
 					Font: Regular
-					Text: Edge Scrolling
+					Text: @INPUT-PANEL-EDGESCROLL-CHECKBOX-TEXT@
 				Checkbox@ALLOW_ZOOM_CHECKBOX:
 					X: 15
 					Y: 100
 					Width: 130
 					Height: 20
 					Font: Regular
-					Text: Scroll Zooming
+					Text: @INPUT-PANEL-ALLOW-ZOOM-CHECKBOX-TEXT@
 				Checkbox@LOCKMOUSE_CHECKBOX:
 					X: 15
 					Y: 130
 					Width: 130
 					Height: 20
 					Font: Regular
-					Text: Lock mouse to window
+					Text: @INPUT-PANEL-LOCKMOUSE-CHECKBOX-TEXT@
 				Label@SCROLL_SPEED_LABEL:
 					X: PARENT_RIGHT - WIDTH - 270
 					Y: 127
 					Width: 95
 					Height: 25
-					Text: Scroll Speed:
+					Text: @INPUT-PANEL-SCROLL-SPEED-LABEL-TEXT@
 					Align: Right
 				Slider@SCROLLSPEED_SLIDER:
 					X: PARENT_RIGHT - WIDTH - 170
@@ -447,7 +447,7 @@ Background@SETTINGS_PANEL:
 					Y: 127
 					Width: 95
 					Height: 25
-					Text: UI Scroll:
+					Text: @INPUT-PANEL-UI-SCROLL-SPEED-LABEL-TEXT@
 					Align: Right
 				Slider@UI_SCROLLSPEED_SLIDER:
 					X: PARENT_RIGHT - WIDTH - 6
@@ -461,7 +461,7 @@ Background@SETTINGS_PANEL:
 					Y: 165
 					Width: PARENT_RIGHT
 					Font: Bold
-					Text: Hotkeys
+					Text: @INPUT-PANEL-HOTKEYS-TITLE-TEXT@
 					Align: Center
 				ScrollPanel@HOTKEY_LIST:
 					X: 15
@@ -534,42 +534,42 @@ Background@SETTINGS_PANEL:
 					Width: 200
 					Height: 20
 					Font: Regular
-					Text: Enable Network Discovery (UPnP)
+					Text: @ADVANCED-PANEL-NAT-DISCOVERY-TEXT@
 				Checkbox@PERFTEXT_CHECKBOX:
 					X: 15
 					Y: 70
 					Width: 300
 					Height: 20
 					Font: Regular
-					Text: Show Performance Text
+					Text: @ADVANCED-PANEL-PERFTEXT-CHECKBOX-TEXT@
 				Checkbox@PERFGRAPH_CHECKBOX:
 					X: 15
 					Y: 100
 					Width: 300
 					Height: 20
 					Font: Regular
-					Text: Show Performance Graph
+					Text: @ADVANCED-PANEL-PERFGRAPH-CHECKBOX-TEXT@
 				Checkbox@FETCH_NEWS_CHECKBOX:
 					X: 310
 					Y: 40
 					Width: 300
 					Height: 20
 					Font: Regular
-					Text: Fetch Community News
+					Text: @ADVANCED-PANEL-FETCH-NEWS-CHECKBOX-TEXT@
 				Checkbox@CHECK_VERSION_CHECKBOX:
 					X: 310
 					Y: 70
 					Width: 300
 					Height: 20
 					Font: Regular
-					Text: Check for Updates
+					Text: @ADVANCED-PANEL-CHECK-VERSION-CHECKBOX-TEXT@
 				Checkbox@SENDSYSINFO_CHECKBOX:
 					X: 310
 					Y: 100
 					Width: 300
 					Height: 20
 					Font: Regular
-					Text: Send System Information
+					Text: @ADVANCED-PANEL-SENDSYSINFO-CHECKBOX-TEXT@
 				Label@SENDSYSINFO_DESC:
 					X: 310
 					Y: 115
@@ -577,12 +577,12 @@ Background@SETTINGS_PANEL:
 					Height: 30
 					Font: Tiny
 					WordWrap: True
-					Text: Your Operating System, OpenGL and .NET runtime versions, and language settings will be sent along with an anonymous ID to help prioritize future development.
+					Text: @ADVANCED-PANEL-SENDSYSINFO-DESC-TEXT@
 				Label@DEBUG_TITLE:
 					Y: 200
 					Width: PARENT_RIGHT
 					Font: Bold
-					Text: Debug
+					Text: @ADVANCED-PANEL-DEBUG-TITLE-TEXT@
 					Align: Center
 				Checkbox@BOTDEBUG_CHECKBOX:
 					X: 15
@@ -590,25 +590,25 @@ Background@SETTINGS_PANEL:
 					Width: 300
 					Height: 20
 					Font: Regular
-					Text: Show Bot Debug Messages
+					Text: @ADVANCED-PANEL-BOTDEBUG-CHECKBOX-TEXT@
 				Checkbox@CHECKUNSYNCED_CHECKBOX:
 					X: 15
 					Y: 250
 					Width: 300
 					Height: 20
 					Font: Regular
-					Text: Check Sync around Unsynced Code
+					Text: @ADVANCED-PANEL-CHECKUNSYNCED-CHECKBOX-TEXT@
 				Checkbox@LUADEBUG_CHECKBOX:
 					X: 310
 					Y: 220
 					Width: 300
 					Height: 20
 					Font: Regular
-					Text: Show Map Debug Messages
+					Text: @ADVANCED-PANEL-LUADEBUG-CHECKBOX-TEXT@
 				Checkbox@REPLAY_COMMANDS_CHECKBOX:
 					X: 310
 					Y: 250
 					Width: 300
 					Height: 20
 					Font: Regular
-					Text: Enable Debug Commands in Replays
+					Text: @ADVANCED-PANEL-REPLAY-COMMANDS-CHECKBOX-TEXT@

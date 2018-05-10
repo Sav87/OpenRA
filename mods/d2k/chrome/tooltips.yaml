@@ -123,7 +123,7 @@ Background@CLIENT_TOOLTIP:
 			Y: 4
 			Height: 18
 			Font: Bold
-			Text: Game Admin
+			Text: @CLIENT-TOOLTIP-ADMIN-TEXT@
 			Align: Center
 		Label@IP:
 			Y: 7
@@ -141,7 +141,7 @@ Background@CLIENT_TOOLTIP:
 			Y: 31
 			Height: 10
 			Font: TinyBold
-			Text: Latency:
+			Text: @CLIENT-TOOLTIP-LATENCY-PREFIX-TEXT@
 		Label@LATENCY:
 			Y: 31
 			Height: 10
@@ -157,7 +157,7 @@ Background@INGAME_CLIENT_TOOLTIP:
 			Y: 4
 			Height: 18
 			Font: Bold
-			Text: Game Admin
+			Text: @INGAME-CLIENT-TOOLTIP-ADMIN-TEXT@
 			Align: Center
 		Label@IP:
 			Y: 7
@@ -193,7 +193,7 @@ Background@PRODUCTION_TOOLTIP:
 			Y: 21
 			Height: 23
 			Font: TinyBold
-			Text: Requires {0}
+			Text: @PRODUCTION-TOOLTIP-REQUIRES-TEXT@
 		Label@DESC:
 			X: 7
 			Y: 41

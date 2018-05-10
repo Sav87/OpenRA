@@ -18,14 +18,14 @@ Background@CONNECTIONFAILED_PANEL:
 			Y: 45
 			Width: PARENT_RIGHT
 			Height: 25
-			Text: Could not connect to AAA.BBB.CCC.DDD:EEEE
+			Text: @CONNECTIONFAILED-PANEL-CONNECTING-DESC-TEXT@
 			Align: Center
 		Label@CONNECTION_ERROR:
 			X: 0
 			Y: 75
 			Width: PARENT_RIGHT
 			Height: 25
-			Text: ServerError
+			Text: @CONNECTIONFAILED-PANEL-CONNECTION-ERROR-TEXT@
 			Align: Center
 			Font: Bold
 		Label@PASSWORD_LABEL:
@@ -33,7 +33,7 @@ Background@CONNECTIONFAILED_PANEL:
 			Y: 110
 			Width: 95
 			Height: 25
-			Text: Password:
+			Text: @CONNECTIONFAILED-PANEL-PASSWORD-LABEL-TEXT@
 			Font: Bold
 		PasswordField@PASSWORD:
 			X: PARENT_RIGHT - 285
@@ -46,7 +46,7 @@ Background@CONNECTIONFAILED_PANEL:
 			Y: PARENT_BOTTOM - 45
 			Width: 160
 			Height: 25
-			Text: Retry
+			Text: @CONNECTIONFAILED-PANEL-RETRY-BUTTON-TEXT@
 			Font: Bold
 			Key: return
 		Button@ABORT_BUTTON:
@@ -54,7 +54,7 @@ Background@CONNECTIONFAILED_PANEL:
 			Y: PARENT_BOTTOM - 45
 			Width: 160
 			Height: 25
-			Text: Cancel
+			Text: @CONNECTIONFAILED-PANEL-ABORT-BUTTON-TEXT@
 			Font: Bold
 			Key: escape
 
@@ -70,7 +70,7 @@ Background@CONNECTING_PANEL:
 			Y: 20
 			Width: 450
 			Height: 25
-			Text: Connecting
+			Text: @CONNECTING-PANEL-CONNECTING-TITLE-TEXT@
 			Align: Center
 			Font: Bold
 		Label@CONNECTING_DESC:
@@ -78,14 +78,14 @@ Background@CONNECTING_PANEL:
 			Y: 60
 			Width: PARENT_RIGHT
 			Height: 25
-			Text: Connecting to AAA.BBB.CCC.DDD:EEEE...
+			Text: @CONNECTING-PANEL-CONNECTING-DESC-TEXT@
 			Align: Center
 		Button@ABORT_BUTTON:
 			X: PARENT_RIGHT - 180
 			Y: PARENT_BOTTOM - 45
 			Width: 160
 			Height: 25
-			Text: Abort
+			Text: @CONNECTING-PANEL-ABORT-BUTTON-TEXT@
 			Font: Bold
 			Key: escape
 
@@ -103,12 +103,12 @@ Background@CONNECTION_SWITCHMOD_PANEL:
 			Height: 25
 			Align: Center
 			Font: Bold
-			Text: Switch Mod
+			Text: @CONNECTION-SWITCHMOD-PANEL-TITLE-TEXT@
 		Label@DESC:
 			Y: 45
 			Width: PARENT_RIGHT
 			Height: 25
-			Text: This server is running a different mod:
+			Text: @CONNECTION-SWITCHMOD-PANEL-DESC-TEXT@
 			Font: Bold
 			Align: Center
 		Container@MOD_CONTAINER:
@@ -137,7 +137,7 @@ Background@CONNECTION_SWITCHMOD_PANEL:
 			Y: 110
 			Width: PARENT_RIGHT
 			Height: 25
-			Text: Switch mods and join server?
+			Text: @CONNECTION-SWITCHMOD-PANEL-DESC2-TEXT@
 			Font: Bold
 			Align: Center
 		Button@SWITCH_BUTTON:
@@ -145,7 +145,7 @@ Background@CONNECTION_SWITCHMOD_PANEL:
 			Y: PARENT_BOTTOM - 45
 			Width: 160
 			Height: 25
-			Text: Switch
+			Text: @CONNECTION-SWITCHMOD-PANEL-SWITCH-BUTTON-TEXT@
 			Font: Bold
 			Key: return
 		Button@ABORT_BUTTON:
@@ -153,6 +153,6 @@ Background@CONNECTION_SWITCHMOD_PANEL:
 			Y: PARENT_BOTTOM - 45
 			Width: 160
 			Height: 25
-			Text: Cancel
+			Text: @CONNECTION-SWITCHMOD-PANEL-ABORT-BUTTON-TEXT@
 			Font: Bold
 			Key: escape

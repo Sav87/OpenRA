@@ -9,7 +9,7 @@ Background@MULTIPLAYER_CREATESERVER_PANEL:
 			Y: 15
 			Width: PARENT_RIGHT
 			Height: 25
-			Text: Create Server
+			Text: @MULTIPLAYER-CREATESERVER-PANEL-TITLE-TEXT@
 			Align: Center
 			Font: Bold
 		Label@SERVER_NAME_LABEL:
@@ -17,20 +17,20 @@ Background@MULTIPLAYER_CREATESERVER_PANEL:
 			Width: 105
 			Height: 25
 			Align: Right
-			Text: Server Name:
+			Text: @MULTIPLAYER-CREATESERVER-PANEL-SERVER-NAME-LABEL-TEXT@
 		TextField@SERVER_NAME:
 			X: 110
 			Y: 45
 			Width: 215
 			MaxLength: 50
 			Height: 25
-			Text: My OpenRA Server
+			Text: @MULTIPLAYER-CREATESERVER-PANEL-SERVER-NAME-TEXT@
 		Label@PASSWORD_LABEL:
 			Y: 79
 			Width: 105
 			Height: 25
 			Align: Right
-			Text: Password:
+			Text: @MULTIPLAYER-CREATESERVER-PANEL-PASSWORD-LABEL-TEXT@
 		PasswordField@PASSWORD:
 			X: 110
 			Y: 80
@@ -43,13 +43,13 @@ Background@MULTIPLAYER_CREATESERVER_PANEL:
 			Width: 95
 			Height: 25
 			Align: Left
-			Text: (optional)
+			Text: @MULTIPLAYER-CREATESERVER-PANEL-AFTER-PASSWORD-LABEL-TEXT@
 		Label@LISTEN_PORT_LABEL:
 			Y: 114
 			Width: 105
 			Height: 25
 			Align: Right
-			Text: Port:
+			Text: @MULTIPLAYER-CREATESERVER-PANEL-LISTEN-PORT-LABEL-TEXT@
 		TextField@LISTEN_PORT:
 			X: 110
 			Y: 115
@@ -64,7 +64,7 @@ Background@MULTIPLAYER_CREATESERVER_PANEL:
 			Width: 150
 			Height: 20
 			Font: Regular
-			Text: Advertise Online
+			Text: @MULTIPLAYER-CREATESERVER-PANEL-ADVERTISE-CHECKBOX-TEXT@
 		Label@NOTICES_HEADER_A:
 			X: 20
 			Y: 155
@@ -94,21 +94,21 @@ Background@MULTIPLAYER_CREATESERVER_PANEL:
 					Height: 25
 					Font: Tiny
 					Align: Left
-					Text: - Game will be advertised to the Local Area Network only.
+					Text: @NOTICES-LAN-ADVERTISING-TEXT@
 				Label@FIREWALL:
 					Y: 12
 					Width: 305
 					Height: 25
 					Font: Tiny
 					Align: Left
-					Text: - You must manually configure your firewall to allow connections.
+					Text: @NOTICES-LAN-FIREWALL-TEXT@
 				Label@PORTFORWARD_A:
 					Y: 24
 					Width: 305
 					Height: 25
 					Font: Tiny
 					Align: Left
-					Text: - Players can connect using Direct IP from the Internet if you
+					Text: @NOTICES-LAN-PORTFORWARD-A-TEXT@
 				Label@PORTFORWARD_B:
 					X: 7
 					Y: 36
@@ -116,7 +116,7 @@ Background@MULTIPLAYER_CREATESERVER_PANEL:
 					Height: 25
 					Font: Tiny
 					Align: Left
-					Text: manually configure port forwarding on your router.
+					Text: @NOTICES-LAN-PORTFORWARD-B-TEXT@
 		Container@NOTICES_NO_UPNP:
 			X: 25
 			Y: 175
@@ -128,21 +128,21 @@ Background@MULTIPLAYER_CREATESERVER_PANEL:
 					Height: 25
 					Font: Tiny
 					Align: Left
-					Text: - Game will be advertised to the Local Area Network and Internet.
+					Text: @NOTICES-NO-UPNP-ADVERTISING-TEXT@
 				Label@FIREWALL:
 					Y: 12
 					Width: 305
 					Height: 25
 					Font: Tiny
 					Align: Left
-					Text: - You must manually configure your firewall to allow connections.
+					Text: @NOTICES-NO-UPNP-FIREWALL-TEXT@
 				Label@PORTFORWARD_A:
 					Y: 24
 					Width: 305
 					Height: 25
 					Font: Tiny
 					Align: Left
-					Text: - You must manually configure your router to allow and forward
+					Text: @NOTICES-NO-UPNP-PORTFORWARD-A-TEXT@
 				Label@PORTFORWARD_B:
 					X: 7
 					Y: 36
@@ -150,14 +150,14 @@ Background@MULTIPLAYER_CREATESERVER_PANEL:
 					Height: 25
 					Font: Tiny
 					Align: Left
-					Text: connections to your local IP and Port.
+					Text: @NOTICES-NO-UPNP-PORTFORWARD-B-TEXT@
 				Label@SETTINGS_A:
 					Y: 48
 					Width: 305
 					Height: 25
 					Font: Tiny
 					Align: Left
-					Text: - You can enable UPnP (if supported by your router) in the
+					Text: @NOTICES-NO-UPNP-SETTINGS-A-TEXT@
 				Label@SETTINGS_B:
 					X: 7
 					Y: 60
@@ -165,7 +165,7 @@ Background@MULTIPLAYER_CREATESERVER_PANEL:
 					Height: 25
 					Font: Tiny
 					Align: Left
-					Text: Advanced tab of the OpenRA settings menu.
+					Text: @NOTICES-NO-UPNP-SETTINGS-B-TEXT@
 		Container@NOTICES_UPNP:
 			X: 25
 			Y: 175
@@ -177,28 +177,28 @@ Background@MULTIPLAYER_CREATESERVER_PANEL:
 					Height: 25
 					Font: Tiny
 					Align: Left
-					Text: - Game will be advertised to the Local Area Network and Internet.
+					Text: @NOTICES-UPNP-ADVERTISING-TEXT@
 				Label@FIREWALL:
 					Y: 12
 					Width: 305
 					Height: 25
 					Font: Tiny
 					Align: Left
-					Text: - You must manually configure your firewall to allow connections.
+					Text: @NOTICES-UPNP-FIREWALL-TEXT@
 				Label@PORTFORWARD_A:
 					Y: 24
 					Width: 305
 					Height: 25
 					Font: Tiny
 					Align: Left
-					Text: - OpenRA will use UPnP to automaticaly configure port forwarding.
+					Text: @NOTICES-UPNP-PORTFORWARD-A-TEXT@
 				Label@SETTINGS_A:
 					Y: 36
 					Width: 305
 					Height: 25
 					Font: Tiny
 					Align: Left
-					Text: - You can disable UPnP in the OpenRA settings menu.
+					Text: @NOTICES-UPNP-SETTINGS-A-TEXT@
 		Background@MAP_BG:
 			X: PARENT_RIGHT - 194
 			Y: 45
@@ -240,14 +240,14 @@ Background@MULTIPLAYER_CREATESERVER_PANEL:
 			Y: PARENT_BOTTOM - 45
 			Width: 120
 			Height: 25
-			Text: Change Map
+			Text: @MULTIPLAYER-CREATESERVER-PANEL-MAP-BUTTON-TEXT@
 			Font: Bold
 		Button@BACK_BUTTON:
 			X: PARENT_RIGHT - WIDTH - 20
 			Y: PARENT_BOTTOM - 45
 			Width: 120
 			Height: 25
-			Text: Back
+			Text: @MULTIPLAYER-CREATESERVER-PANEL-BACK-BUTTON-TEXT@
 			Font: Bold
 			Key: escape
 		Button@CREATE_BUTTON:
@@ -256,6 +256,6 @@ Background@MULTIPLAYER_CREATESERVER_PANEL:
 			Y: PARENT_BOTTOM - 45
 			Width: 120
 			Height: 25
-			Text: Create
+			Text: @MULTIPLAYER-CREATESERVER-PANEL-CREATE-BUTTON-TEXT@
 			Font: Bold
 		TooltipContainer@TOOLTIP_CONTAINER:
