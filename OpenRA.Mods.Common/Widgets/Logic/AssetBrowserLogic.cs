@@ -69,14 +69,7 @@ namespace OpenRA.Mods.Common.Widgets.Logic
 			if (sourceDropdown != null)
 			{
 				sourceDropdown.OnMouseDown = _ => ShowSourceDropdown(sourceDropdown);
-				sourceDropdown.GetText = () =>
-				{
-					var name = assetSource != null ? Platform.UnresolvePath(assetSource.Name) : "All Packages";
-					if (name.Length > 15)
-						name = "..." + name.Substring(name.Length - 15);
-
-					return name;
-				};
+				sourceDropdown.Text = assetSource != null ? Platform.UnresolvePath(assetSource.Name) : FieldLoader.Translate("ASSETBROWSER-ALLPACKAGES-TEXT");
 			}
 
 			var spriteWidget = panel.GetOrNull<SpriteWidget>("SPRITE");
@@ -365,10 +358,14 @@ namespace OpenRA.Mods.Common.Widgets.Logic
 		{
 			Func<IReadOnlyPackage, ScrollItemWidget, ScrollItemWidget> setupItem = (source, itemTemplate) =>
 			{
+				string name = source != null ? Platform.UnresolvePath(source.Name) : "All Packages";
+				string dropdownText = (name.Length > 15) ? "..." + name.Substring(name.Length - 15) : name;
+
 				var item = ScrollItemWidget.Setup(itemTemplate,
 					() => assetSource == source,
-					() => { assetSource = source; PopulateAssetList(); });
-				item.Get<LabelWidget>("LABEL").GetText = () => source != null ? Platform.UnresolvePath(source.Name) : "All Packages";
+					() => { dropdown.Text = dropdownText; assetSource = source; PopulateAssetList(); });
+
+				item.Get<LabelWidget>("LABEL").GetText = () => name;
 				return item;
 			};
 

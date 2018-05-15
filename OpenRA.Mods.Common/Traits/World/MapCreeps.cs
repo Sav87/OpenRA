@@ -19,11 +19,11 @@ namespace OpenRA.Mods.Common.Traits
 	{
 		[Translate]
 		[Desc("Descriptive label for the creeps checkbox in the lobby.")]
-		public readonly string CheckboxLabel = "Creep Actors";
+		public readonly string CheckboxLabel = FieldLoader.Translate("LOBBY-OPTIONS-CREEPACTORS-TEXT");
 
 		[Translate]
 		[Desc("Tooltip description for the creeps checkbox in the lobby.")]
-		public readonly string CheckboxDescription = "Hostile forces spawn on the battlefield";
+		public readonly string CheckboxDescription = FieldLoader.Translate("LOBBY-OPTIONS-CREEPACTORSDESCRIPTION-TEXT");
 
 		[Desc("Default value of the creeps checkbox in the lobby.")]
 		public readonly bool CheckboxEnabled = true;

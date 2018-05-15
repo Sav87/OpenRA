@@ -85,7 +85,7 @@ namespace OpenRA.Mods.Common.Widgets.Logic
 			abortMissionButton.IsVisible = () => world.Type == WorldType.Regular;
 			abortMissionButton.IsDisabled = () => leaving;
 			if (world.IsGameOver)
-				abortMissionButton.GetText = () => FieldLoader.Translate("MENU-BUTTONS-ABORT-MISSION-ISGAMEOVER-TEXT");
+				abortMissionButton.Text = FieldLoader.Translate("MENU-BUTTONS-ABORT-MISSION-ISGAMEOVER-TEXT");
 
 			abortMissionButton.OnClick = () =>
 			{
@@ -205,7 +205,7 @@ namespace OpenRA.Mods.Common.Widgets.Logic
 			var resumeButton = menu.Get<ButtonWidget>("RESUME");
 			resumeButton.IsDisabled = () => leaving;
 			if (world.IsGameOver)
-				resumeButton.GetText = () => FieldLoader.Translate("MENU-BUTTONS-RESUME-ISGAMEOVER-TEXT");
+				resumeButton.Text = FieldLoader.Translate("MENU-BUTTONS-RESUME-ISGAMEOVER-TEXT");
 
 			resumeButton.OnClick = closeMenu;
 

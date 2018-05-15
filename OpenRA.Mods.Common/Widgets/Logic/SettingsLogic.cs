@@ -165,16 +165,16 @@ namespace OpenRA.Mods.Common.Widgets.Logic
 
 			var languageDropDownButton = panel.Get<DropDownButtonWidget>("LANGUAGE_DROPDOWNBUTTON");
 			languageDropDownButton.OnMouseDown = _ => ShowLanguageDropdown(languageDropDownButton, modData.Languages);
-			languageDropDownButton.GetText = () => FieldLoader.Translate(ds.Language);
-
+			languageDropDownButton.Text = FieldLoader.Translate(ds.Language);
+			
 			var windowModeDropdown = panel.Get<DropDownButtonWidget>("MODE_DROPDOWN");
 			windowModeDropdown.OnMouseDown = _ => ShowWindowModeDropdown(windowModeDropdown, ds);
-			windowModeDropdown.GetText = () => FieldLoader.Translate("DISPLAY-MODE-DROPDOWN-{0}-TEXT".F(ds.Mode.ToString().ToUpper()));
-
+			windowModeDropdown.Text = FieldLoader.Translate("DISPLAY-MODE-DROPDOWN-{0}-TEXT".F(ds.Mode.ToString().ToUpper()));
+			
 			var statusBarsDropDown = panel.Get<DropDownButtonWidget>("STATUS_BAR_DROPDOWN");
 			statusBarsDropDown.OnMouseDown = _ => ShowStatusBarsDropdown(statusBarsDropDown, gs);
-			statusBarsDropDown.GetText = () => FieldLoader.Translate("DISPLAY-STATUS-BAR-DROPDOWN-{0}-TEXT".F(gs.StatusBars.ToString().ToUpper()));
-
+			statusBarsDropDown.Text = FieldLoader.Translate("DISPLAY-STATUS-BAR-DROPDOWN-{0}-TEXT".F(gs.StatusBars.ToString().ToUpper()));
+			
 			// Update zoom immediately
 			var pixelDoubleCheckbox = panel.Get<CheckboxWidget>("PIXELDOUBLE_CHECKBOX");
 			var pixelDoubleOnClick = pixelDoubleCheckbox.OnClick;
@@ -397,16 +397,16 @@ namespace OpenRA.Mods.Common.Widgets.Logic
 
 			var middleMouseScrollDropdown = panel.Get<DropDownButtonWidget>("MIDDLE_MOUSE_SCROLL");
 			middleMouseScrollDropdown.OnMouseDown = _ => ShowMouseScrollDropdown(middleMouseScrollDropdown, gs, false);
-			middleMouseScrollDropdown.GetText = () => FieldLoader.Translate("INPUT-MOUSE-SCROLL-DROPDOWN-{0}-TEXT".F(gs.MiddleMouseScroll.ToString().ToUpper()));
-
+			middleMouseScrollDropdown.Text = FieldLoader.Translate("INPUT-MOUSE-SCROLL-DROPDOWN-{0}-TEXT".F(gs.MiddleMouseScroll.ToString().ToUpper()));
+			
 			var rightMouseScrollDropdown = panel.Get<DropDownButtonWidget>("RIGHT_MOUSE_SCROLL");
 			rightMouseScrollDropdown.OnMouseDown = _ => ShowMouseScrollDropdown(rightMouseScrollDropdown, gs, true);
-			rightMouseScrollDropdown.GetText = () => FieldLoader.Translate("INPUT-MOUSE-SCROLL-DROPDOWN-{0}-TEXT".F(gs.RightMouseScroll.ToString().ToUpper()));
-
+			rightMouseScrollDropdown.Text = FieldLoader.Translate("INPUT-MOUSE-SCROLL-DROPDOWN-{0}-TEXT".F(gs.RightMouseScroll.ToString().ToUpper()));
+			
 			var zoomModifierDropdown = panel.Get<DropDownButtonWidget>("ZOOM_MODIFIER");
 			zoomModifierDropdown.OnMouseDown = _ => ShowZoomModifierDropdown(zoomModifierDropdown, gs);
-			zoomModifierDropdown.GetText = () => gs.ZoomModifier.ToString();
-
+			zoomModifierDropdown.Text = gs.ZoomModifier.ToString();
+			
 			var hotkeyList = panel.Get<ScrollPanelWidget>("HOTKEY_LIST");
 			hotkeyList.Layout = new GridLayout(hotkeyList);
 			var hotkeyHeader = hotkeyList.Get<ScrollItemWidget>("HEADER");
@@ -528,7 +528,7 @@ namespace OpenRA.Mods.Common.Widgets.Logic
 			{
 				var item = ScrollItemWidget.Setup(itemTemplate,
 					() => (rightMouse ? s.RightMouseScroll : s.MiddleMouseScroll) == options[o],
-					() => { if (rightMouse) s.RightMouseScroll = options[o]; else s.MiddleMouseScroll = options[o]; });
+					() => { dropdown.Text = o; if (rightMouse) s.RightMouseScroll = options[o]; else s.MiddleMouseScroll = options[o]; });
 				item.Get<LabelWidget>("LABEL").GetText = () => o;
 				return item;
 			};
@@ -596,7 +596,7 @@ namespace OpenRA.Mods.Common.Widgets.Logic
 			{
 				var item = ScrollItemWidget.Setup(itemTemplate,
 					() => s.Mode == options[o],
-					() => s.Mode = options[o]);
+					() => {	dropdown.Text = o; s.Mode = options[o];	});
 
 				item.Get<LabelWidget>("LABEL").GetText = () => o;
 				return item;
@@ -612,9 +612,10 @@ namespace OpenRA.Mods.Common.Widgets.Logic
 			{
 				var item = ScrollItemWidget.Setup(itemTemplate,
 					() => Game.Settings.Graphics.Language == o,
-					() => Game.Settings.Graphics.Language = o);
+					() => { dropdown.Text = o; Game.Settings.Graphics.Language = o; });
 
-				item.Get<LabelWidget>("LABEL").GetText = () => FieldLoader.Translate(o);
+				var text = FieldLoader.Translate(o);
+				item.Get<LabelWidget>("LABEL").GetText = () => text;
 				return item;
 			};
 
@@ -627,7 +628,7 @@ namespace OpenRA.Mods.Common.Widgets.Logic
 			var options = new Dictionary<string, StatusBarsType>()
 			{
 				{ FieldLoader.Translate("DISPLAY-STATUS-BAR-DROPDOWN-STANDARD-TEXT"), StatusBarsType.Standard },
-				{ FieldLoader.Translate("DISPLAY-STATUS-BAR-DROPDOWN-SHOWONDAMAGE-TEXT"), StatusBarsType.DamageShow },
+				{ FieldLoader.Translate("DISPLAY-STATUS-BAR-DROPDOWN-DAMAGESHOW-TEXT"), StatusBarsType.DamageShow },
 				{ FieldLoader.Translate("DISPLAY-STATUS-BAR-DROPDOWN-ALWAYSSHOW-TEXT"), StatusBarsType.AlwaysShow },
 			};
 
@@ -635,7 +636,7 @@ namespace OpenRA.Mods.Common.Widgets.Logic
 			{
 				var item = ScrollItemWidget.Setup(itemTemplate,
 					() => s.StatusBars == options[o],
-					() => s.StatusBars = options[o]);
+					() => { dropdown.Text = o; s.StatusBars = options[o]; });
 
 				item.Get<LabelWidget>("LABEL").GetText = () => o;
 				return item;

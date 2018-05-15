@@ -20,11 +20,11 @@ namespace OpenRA.Mods.Common.Traits
 	{
 		[Translate]
 		[Desc("Descriptive label for the short game checkbox in the lobby.")]
-		public readonly string ShortGameCheckboxLabel = "Short Game";
+		public readonly string ShortGameCheckboxLabel = FieldLoader.Translate("LOBBY-OPTIONS-SHORTGAME-TEXT");
 
 		[Translate]
 		[Desc("Tooltip description for the short game checkbox in the lobby.")]
-		public readonly string ShortGameCheckboxDescription = "Players are defeated when their bases are destroyed";
+		public readonly string ShortGameCheckboxDescription = FieldLoader.Translate("LOBBY-OPTIONS-SHORTGAMEDESCRIPTION-TEXT");
 
 		[Desc("Default value of the short game checkbox in the lobby.")]
 		public readonly bool ShortGameCheckboxEnabled = true;
@@ -40,11 +40,11 @@ namespace OpenRA.Mods.Common.Traits
 
 		[Translate]
 		[Desc("Descriptive label for the tech level option in the lobby.")]
-		public readonly string TechLevelDropdownLabel = "Tech Level";
+		public readonly string TechLevelDropdownLabel = FieldLoader.Translate("LOBBY-OPTIONS-TECHLEVEL-TEXT");
 
 		[Translate]
 		[Desc("Tooltip description for the tech level option in the lobby.")]
-		public readonly string TechLevelDropdownDescription = "Change the units and abilities at your disposal";
+		public readonly string TechLevelDropdownDescription = FieldLoader.Translate("LOBBY-OPTIONS-TECHLEVELDESCRIPTION-TEXT");
 
 		[Desc("Default tech level.")]
 		public readonly string TechLevel = "unrestricted";
@@ -60,11 +60,11 @@ namespace OpenRA.Mods.Common.Traits
 
 		[Translate]
 		[Desc("Tooltip description for the game speed option in the lobby.")]
-		public readonly string GameSpeedDropdownLabel = "Game Speed";
+		public readonly string GameSpeedDropdownLabel = FieldLoader.Translate("LOBBY-OPTIONS-GAMESPEED-TEXT");
 
 		[Translate]
 		[Desc("Description of the game speed option in the lobby.")]
-		public readonly string GameSpeedDropdownDescription = "Change the rate at which time passes";
+		public readonly string GameSpeedDropdownDescription = FieldLoader.Translate("LOBBY-OPTIONS-GAMESPEEDDESCRIPTION-TEXT");
 
 		[Desc("Default game speed.")]
 		public readonly string GameSpeed = "default";

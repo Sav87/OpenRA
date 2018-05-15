@@ -118,7 +118,7 @@ namespace OpenRA.Mods.Common.Widgets.Logic
 
 			var name = lobby.GetOrNull<LabelWidget>("SERVER_NAME");
 			if (name != null)
-				name.GetText = () => orderManager.LobbyInfo.GlobalSettings.ServerName;
+				name.Text = orderManager.LobbyInfo.GlobalSettings.ServerName;
 
 			var mapContainer = Ui.LoadWidget("MAP_PREVIEW", lobby.Get("MAP_PREVIEW_ROOT"), new WidgetArgs
 			{
@@ -206,7 +206,7 @@ namespace OpenRA.Mods.Common.Widgets.Logic
 						{
 							new DropDownOption()
 							{
-								Title = "Add",
+								Title = FieldLoader.Translate("SERVER-LOBBY-SLOTS-DROPDOWNBUTTON-ADD-TEXT"),
 								IsSelected = () => false,
 								OnClick = () =>
 								{
@@ -225,7 +225,7 @@ namespace OpenRA.Mods.Common.Widgets.Logic
 						{
 							botOptions.Add(new DropDownOption()
 							{
-								Title = "Remove",
+								Title = FieldLoader.Translate("SERVER-LOBBY-SLOTS-DROPDOWNBUTTON-REMOVE-TEXT"),
 								IsSelected = () => false,
 								OnClick = () =>
 								{
@@ -239,7 +239,8 @@ namespace OpenRA.Mods.Common.Widgets.Logic
 							});
 						}
 
-						options.Add("Configure Bots", botOptions);
+						string optionsName = FieldLoader.Translate("SERVER-LOBBY-SLOTS-DROPDOWNBUTTON-CONFIGUREBOTS-TEXT");
+						options.Add(optionsName, botOptions);
 					}
 
 					var teamCount = (orderManager.LobbyInfo.Slots.Count(s => !s.Value.LockTeam && orderManager.LobbyInfo.ClientInSlot(s.Key) != null) + 1) / 2;
@@ -247,7 +248,7 @@ namespace OpenRA.Mods.Common.Widgets.Logic
 					{
 						var teamOptions = Enumerable.Range(2, teamCount - 1).Reverse().Select(d => new DropDownOption
 						{
-							Title = "{0} Teams".F(d),
+							Title = FieldLoader.Translate("SERVER-LOBBY-SLOTS-DROPDOWNBUTTON-TEAMS-TEXT").F(d),
 							IsSelected = () => false,
 							OnClick = () => orderManager.IssueOrder(Order.Command("assignteams {0}".F(d.ToString())))
 						}).ToList();
@@ -256,7 +257,7 @@ namespace OpenRA.Mods.Common.Widgets.Logic
 						{
 							teamOptions.Add(new DropDownOption
 							{
-								Title = "Humans vs Bots",
+								Title = FieldLoader.Translate("SERVER-LOBBY-SLOTS-DROPDOWNBUTTON-HUMANSVSBOTS-TEXT"),
 								IsSelected = () => false,
 								OnClick = () => orderManager.IssueOrder(Order.Command("assignteams 1"))
 							});
@@ -264,12 +265,13 @@ namespace OpenRA.Mods.Common.Widgets.Logic
 
 						teamOptions.Add(new DropDownOption
 						{
-							Title = "Free for all",
+							Title = FieldLoader.Translate("SERVER-LOBBY-SLOTS-DROPDOWNBUTTON-FREEFORALL-TEXT"),
 							IsSelected = () => false,
 							OnClick = () => orderManager.IssueOrder(Order.Command("assignteams 0"))
 						});
 
-						options.Add("Configure Teams", teamOptions);
+						string optionsName = FieldLoader.Translate("SERVER-LOBBY-SLOTS-DROPDOWNBUTTON-CONFIGURETEAMS-TEXT");
+						options.Add(optionsName, teamOptions);
 					}
 
 					Func<DropDownOption, ScrollItemWidget, ScrollItemWidget> setupItem = (option, template) =>
@@ -319,7 +321,8 @@ namespace OpenRA.Mods.Common.Widgets.Logic
 			optionsTab.IsHighlighted = () => panel == PanelType.Options;
 			optionsTab.IsDisabled = OptionsTabDisabled;
 			optionsTab.OnClick = () => panel = PanelType.Options;
-			optionsTab.GetText = () => !map.RulesLoaded ? "Loading..." : optionsTab.Text;
+			string optionsLoading = FieldLoader.Translate("SERVER-LOBBY-OPTIONS-LOADING-TEXT");
+			optionsTab.GetText = () => !map.RulesLoaded ? optionsLoading : optionsTab.Text;
 
 			var playersTab = tabContainer.Get<ButtonWidget>("PLAYERS_TAB");
 			playersTab.IsHighlighted = () => panel == PanelType.Players;
@@ -380,7 +383,7 @@ namespace OpenRA.Mods.Common.Widgets.Logic
 			disconnectButton.OnClick = () => { Ui.CloseWindow(); onExit(); };
 
 			if (skirmishMode)
-				disconnectButton.Text = "Back";
+				disconnectButton.Text = FieldLoader.Translate("SKIRMISH-DISCONNECT-BUTTON-TEXT");
 
 			chatLabel = lobby.Get<LabelWidget>("LABEL_CHATTYPE");
 			var chatTextField = lobby.Get<TextFieldWidget>("CHAT_TEXTFIELD");

@@ -41,10 +41,13 @@ namespace OpenRA.Mods.Common.Widgets.Logic
 		public static void ShowSlotDropDown(DropDownButtonWidget dropdown, Session.Slot slot,
 			Session.Client client, OrderManager orderManager, MapPreview map)
 		{
-			var options = new Dictionary<string, IEnumerable<SlotDropDownOption>>() { { "Slot", new List<SlotDropDownOption>()
+			string slotText = FieldLoader.Translate("SERVER-LOBBY-SLOTS-DROPDOWNBUTTON-SLOT-TEXT");
+			string slotClosed = FieldLoader.Translate("SERVER-LOBBY-SLOTS-DROPDOWNBUTTON-CLOSED-TEXT");
+			string slotOpen = FieldLoader.Translate("SERVER-LOBBY-SLOTS-DROPDOWNBUTTON-OPEN-TEXT");
+			var options = new Dictionary<string, IEnumerable<SlotDropDownOption>>() { { slotText, new List<SlotDropDownOption>()
 			{
-				new SlotDropDownOption("Open", "slot_open " + slot.PlayerReference, () => (!slot.Closed && client == null)),
-				new SlotDropDownOption("Closed", "slot_close " + slot.PlayerReference, () => slot.Closed)
+				new SlotDropDownOption(slotOpen, "slot_open " + slot.PlayerReference, () => (!slot.Closed && client == null)),
+				new SlotDropDownOption(slotClosed, "slot_close " + slot.PlayerReference, () => slot.Closed)
 			} } };
 
 			var bots = new List<SlotDropDownOption>();
@@ -59,7 +62,9 @@ namespace OpenRA.Mods.Common.Widgets.Logic
 				}
 			}
 
-			options.Add(bots.Any() ? "Bots" : "Bots Disabled", bots);
+			string slotBots = FieldLoader.Translate("SERVER-LOBBY-SLOTS-DROPDOWNBUTTON-BOTS-TEXT");
+			string slotBotsDisabled = FieldLoader.Translate("SERVER-LOBBY-SLOTS-DROPDOWNBUTTON-BOTSDISABLED-TEXT");
+			options.Add(bots.Any() ? slotBots : slotBotsDisabled, bots);
 
 			Func<SlotDropDownOption, ScrollItemWidget, ScrollItemWidget> setupItem = (o, itemTemplate) =>
 			{
@@ -326,7 +331,10 @@ namespace OpenRA.Mods.Common.Widgets.Logic
 			var slot = parent.Get<DropDownButtonWidget>("SLOT_OPTIONS");
 			slot.IsVisible = () => true;
 			slot.IsDisabled = () => orderManager.LocalClient.IsReady;
-			slot.GetText = () => c != null ? c.Name : s.Closed ? "Closed" : "Open";
+			string slotText = c != null ? c.Name : s.Closed 
+				? FieldLoader.Translate("SERVER-LOBBY-SLOTS-DROPDOWNBUTTON-CLOSED-TEXT") 
+				: FieldLoader.Translate("SERVER-LOBBY-SLOTS-DROPDOWNBUTTON-OPEN-TEXT");
+			slot.GetText = () => slotText;
 			slot.OnMouseDown = _ => ShowSlotDropDown(slot, s, c, orderManager, map);
 
 			// Ensure Name selector (if present) is hidden
@@ -337,7 +345,10 @@ namespace OpenRA.Mods.Common.Widgets.Logic
 		{
 			var name = parent.Get<LabelWidget>("NAME");
 			name.IsVisible = () => true;
-			name.GetText = () => c != null ? c.Name : s.Closed ? "Closed" : "Open";
+			string nameText = c != null ? c.Name : s.Closed
+				? FieldLoader.Translate("SERVER-LOBBY-SLOTS-DROPDOWNBUTTON-CLOSED-TEXT")
+				: FieldLoader.Translate("SERVER-LOBBY-SLOTS-DROPDOWNBUTTON-OPEN-TEXT");
+			name.GetText = () => nameText;
 
 			// Ensure Slot selector (if present) is hidden
 			HideChildWidget(parent, "SLOT_OPTIONS");
@@ -447,7 +458,8 @@ namespace OpenRA.Mods.Common.Widgets.Logic
 			dropdown.IsVisible = () => true;
 			dropdown.IsDisabled = () => s.LockTeam || orderManager.LocalClient.IsReady;
 			dropdown.OnMouseDown = _ => ShowTeamDropDown(dropdown, c, orderManager, map.PlayerCount);
-			dropdown.GetText = () => (c.Team == 0) ? "-" : c.Team.ToString();
+			var dropdownText = (c.Team == 0) ? "-" : c.Team.ToString();
+			dropdown.GetText = () => dropdownText;
 
 			HideChildWidget(parent, "TEAM");
 		}
@@ -470,7 +482,8 @@ namespace OpenRA.Mods.Common.Widgets.Logic
 					client => client != c && client.SpawnPoint != 0).Select(client => client.SpawnPoint));
 				ShowSpawnDropDown(dropdown, c, orderManager, spawnPoints);
 			};
-			dropdown.GetText = () => (c.SpawnPoint == 0) ? "-" : Convert.ToChar('A' - 1 + c.SpawnPoint).ToString();
+			var dropdownText = (c.SpawnPoint == 0) ? "-" : Convert.ToChar('A' - 1 + c.SpawnPoint).ToString();
+			dropdown.GetText = () => dropdownText;//(c.SpawnPoint == 0) ? "-" : Convert.ToChar('A' - 1 + c.SpawnPoint).ToString();
 
 			HideChildWidget(parent, "SPAWN");
 		}

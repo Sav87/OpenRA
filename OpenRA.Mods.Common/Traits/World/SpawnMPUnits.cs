@@ -25,11 +25,11 @@ namespace OpenRA.Mods.Common.Traits
 
 		[Translate]
 		[Desc("Descriptive label for the starting units option in the lobby.")]
-		public readonly string DropdownLabel = "Starting Units";
+		public readonly string DropdownLabel = FieldLoader.Translate("LOBBY-OPTIONS-SPAWNMPU-TEXT");
 
 		[Translate]
 		[Desc("Tooltip description for the starting units option in the lobby.")]
-		public readonly string DropdownDescription = "Change the units that you start the game with";
+		public readonly string DropdownDescription = FieldLoader.Translate("LOBBY-OPTIONS-SPAWNMPUDESCRIPTION-TEXT");
 
 		[Desc("Prevent the starting units option from being changed in the lobby.")]
 		public readonly bool DropdownLocked = false;

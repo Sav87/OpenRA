@@ -19,11 +19,11 @@ namespace OpenRA.Traits
 	{
 		[Translate]
 		[Desc("Descriptive label for the fog checkbox in the lobby.")]
-		public readonly string FogCheckboxLabel = "Fog of War";
+		public readonly string FogCheckboxLabel = FieldLoader.Translate("LOBBY-OPTIONS-FOGOFWAR-TEXT");
 
 		[Translate]
 		[Desc("Tooltip description for the fog checkbox in the lobby.")]
-		public readonly string FogCheckboxDescription = "Line of sight is required to view enemy forces";
+		public readonly string FogCheckboxDescription = FieldLoader.Translate("LOBBY-OPTIONS-FOGOFWARDESCRIPTION-TEXT");
 
 		[Desc("Default value of the fog checkbox in the lobby.")]
 		public readonly bool FogCheckboxEnabled = true;
@@ -39,11 +39,11 @@ namespace OpenRA.Traits
 
 		[Translate]
 		[Desc("Descriptive label for the explored map checkbox in the lobby.")]
-		public readonly string ExploredMapCheckboxLabel = "Explored Map";
+		public readonly string ExploredMapCheckboxLabel = FieldLoader.Translate("LOBBY-OPTIONS-EXPLOREDMAP-TEXT");
 
 		[Translate]
 		[Desc("Tooltip description for the explored map checkbox in the lobby.")]
-		public readonly string ExploredMapCheckboxDescription = "Initial map shroud is revealed";
+		public readonly string ExploredMapCheckboxDescription = FieldLoader.Translate("LOBBY-OPTIONS-EXPLOREDMAPDESCRIPTION-TEXT");
 
 		[Desc("Default value of the explore map checkbox in the lobby.")]
 		public readonly bool ExploredMapCheckboxEnabled = false;

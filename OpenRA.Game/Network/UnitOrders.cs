@@ -19,7 +19,7 @@ namespace OpenRA.Network
 	public static class UnitOrders
 	{
 		public const int ChatMessageMaxLength = 2500;
-		const string ServerChatName = "Battlefield Control";
+		static readonly string ServerChatName = FieldLoader.Translate("CHAT-BATTLEFIELDCONTROL-TEXT");
 
 		static Player FindPlayerByClient(this World world, Session.Client c)
 		{

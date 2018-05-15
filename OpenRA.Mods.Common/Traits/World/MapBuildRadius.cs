@@ -19,11 +19,11 @@ namespace OpenRA.Mods.Common.Traits
 	{
 		[Translate]
 		[Desc("Descriptive label for the ally build radius checkbox in the lobby.")]
-		public readonly string AllyBuildRadiusCheckboxLabel = "Build off Allies";
+		public readonly string AllyBuildRadiusCheckboxLabel = FieldLoader.Translate("LOBBY-OPTIONS-BUILDOFFALLIES-TEXT");
 
 		[Translate]
 		[Desc("Tooltip description for the ally build radius checkbox in the lobby.")]
-		public readonly string AllyBuildRadiusCheckboxDescription = "Allow allies to place structures inside your build area";
+		public readonly string AllyBuildRadiusCheckboxDescription = FieldLoader.Translate("LOBBY-OPTIONS-BUILDOFFALLIESDESCRIPTION-TEXT");
 
 		[Desc("Default value of the ally build radius checkbox in the lobby.")]
 		public readonly bool AllyBuildRadiusCheckboxEnabled = true;
@@ -39,11 +39,11 @@ namespace OpenRA.Mods.Common.Traits
 
 		[Translate]
 		[Desc("Tooltip description for the build radius checkbox in the lobby.")]
-		public readonly string BuildRadiusCheckboxLabel = "Limit Build Area";
+		public readonly string BuildRadiusCheckboxLabel = FieldLoader.Translate("LOBBY-OPTIONS-LIMITBUILDAREA-TEXT");
 
 		[Translate]
 		[Desc("Tooltip description for the build radius checkbox in the lobby.")]
-		public readonly string BuildRadiusCheckboxDescription = "Limits structure placement to areas around Construction Yards";
+		public readonly string BuildRadiusCheckboxDescription = FieldLoader.Translate("LOBBY-OPTIONS-LIMITBUILDAREADESCRIPTION-TEXT");
 
 		[Desc("Default value of the build radius checkbox in the lobby.")]
 		public readonly bool BuildRadiusCheckboxEnabled = true;

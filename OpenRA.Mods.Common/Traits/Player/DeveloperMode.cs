@@ -20,11 +20,11 @@ namespace OpenRA.Mods.Common.Traits
 	{
 		[Translate]
 		[Desc("Descriptive label for the developer mode checkbox in the lobby.")]
-		public readonly string CheckboxLabel = "Debug Menu";
+		public readonly string CheckboxLabel = FieldLoader.Translate("LOBBY-OPTIONS-DEBUGMENU-TEXT");
 
 		[Translate]
 		[Desc("Tooltip description for the developer mode checkbox in the lobby.")]
-		public readonly string CheckboxDescription = "Enables cheats and developer commands";
+		public readonly string CheckboxDescription = FieldLoader.Translate("LOBBY-OPTIONS-DEBUGMENUDESCRIPTION-TEXT");//"";
 
 		[Desc("Default value of the developer mode checkbox in the lobby.")]
 		public readonly bool CheckboxEnabled = false;

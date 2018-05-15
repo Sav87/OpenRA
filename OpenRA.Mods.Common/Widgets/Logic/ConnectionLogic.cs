@@ -60,8 +60,8 @@ namespace OpenRA.Mods.Common.Widgets.Logic
 			var panel = widget;
 			panel.Get<ButtonWidget>("ABORT_BUTTON").OnClick = () => { CloseWindow(); onAbort(); };
 
-			widget.Get<LabelWidget>("CONNECTING_DESC").GetText = () =>
-				"Connecting to {0}:{1}...".F(host, port);
+			widget.Get<LabelWidget>("CONNECTING_DESC").Text =
+				FieldLoader.Translate("CONNECTING-PANEL-CONNECT-TEXT").F(host, port);
 		}
 
 		public static void Connect(string host, int port, string password, Action onConnect, Action onAbort)
@@ -104,15 +104,17 @@ namespace OpenRA.Mods.Common.Widgets.Logic
 				onRetry(password);
 			};
 
-			widget.Get<LabelWidget>("CONNECTING_DESC").GetText = () =>
-				"Could not connect to {0}:{1}".F(orderManager.Host, orderManager.Port);
+			widget.Get<LabelWidget>("CONNECTING_DESC").Text = 
+				FieldLoader.Translate("CONNECTIONFAILED-PANEL-NOTCONNECT-TEXT").F(orderManager.Host, orderManager.Port);
 
 			var connectionError = widget.Get<LabelWidget>("CONNECTION_ERROR");
 			connectionError.GetText = () => orderManager.ServerError;
 
 			var panelTitle = widget.Get<LabelWidget>("TITLE");
-			panelTitle.GetText = () => orderManager.AuthenticationFailed ? "Password Required" : "Connection Failed";
-
+			panelTitle.Text = orderManager.AuthenticationFailed 
+				? FieldLoader.Translate("CONNECTIONFAILED-PANEL-TITLE-PASSWORDREQUIRED-TEXT") 
+				: FieldLoader.Translate("CONNECTIONFAILED-PANEL-TITLE-CONNECTIONFAILED-TEXT");
+			
 			passwordField = panel.GetOrNull<PasswordFieldWidget>("PASSWORD");
 			if (passwordField != null)
 			{
@@ -168,7 +170,7 @@ namespace OpenRA.Mods.Common.Widgets.Logic
 				var launchCommand = "Launch.Connect=" + orderManager.Host + ":" + orderManager.Port;
 				Game.SwitchToExternalMod(orderManager.ServerExternalMod, new[] { launchCommand }, () =>
 				{
-					orderManager.ServerError = "Failed to switch mod.";
+					orderManager.ServerError = FieldLoader.Translate("CONNECTIONFAILED-PANEL-TITLE-FAILEDTOSWITCHMOD-TEXT");
 					Ui.CloseWindow();
 					Ui.OpenWindow("CONNECTIONFAILED_PANEL", new WidgetArgs()
 					{
