@@ -77,6 +77,7 @@ namespace OpenRA
 
 		static readonly object TranslationsLock = new object();
 		static Dictionary<string, string> translations;
+		static Dictionary<string, string> translationsUI;
 
 		public static void Load(object self, MiniYaml my)
 		{
@@ -736,14 +737,46 @@ namespace OpenRA
 				if (!translations.TryGetValue(key, out value))
 					return key;
 
-				return value;
+				return value.Replace("\\n", "\n");
 			}
 		}
 
-		public static void SetTranslations(IDictionary<string, string> translations)
+		/*public static void SetTranslations(IDictionary<string, string> translations)
 		{
 			lock (TranslationsLock)
 				FieldLoader.translations = new Dictionary<string, string>(translations);
+		}*/
+
+		public static void SetTranslationsUI(IDictionary<string, string> translations, bool ñoncat = false)
+		{
+			lock (TranslationsLock)
+			{
+				FieldLoader.translationsUI = new Dictionary<string, string>(translations);
+				if (ñoncat)
+				{
+					AddTransations(translations);
+				}
+				else FieldLoader.translations = new Dictionary<string, string>(translations);
+			}
+		}
+
+		public static void SetTranslationsMap(IDictionary<string, string> translations)
+		{
+			lock (TranslationsLock)
+			{
+				FieldLoader.translations = new Dictionary<string, string>(translationsUI);
+				AddTransations(translations);
+			}
+		}
+
+		private static void AddTransations(IDictionary<string, string> translations)
+		{
+			foreach (var tkv in translations)
+			{
+				if (FieldLoader.translations.ContainsKey(tkv.Key))
+					continue;
+				FieldLoader.translations.Add(tkv.Key, tkv.Value);
+			}
 		}
 	}
 

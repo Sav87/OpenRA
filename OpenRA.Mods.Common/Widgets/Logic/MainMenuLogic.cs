@@ -221,7 +221,7 @@ namespace OpenRA.Mods.Common.Widgets.Logic
 				newsPanel.RemoveChild(newsTemplate);
 
 				newsStatus = newsPanel.Get<LabelWidget>("NEWS_STATUS");
-				SetNewsStatus("Loading news");
+				SetNewsStatus(FieldLoader.Translate("MAINMENU-NEWS-LOADING"));
 			}
 
 			Game.OnRemoteDirectConnect += OnRemoteDirectConnect;
@@ -385,7 +385,7 @@ namespace OpenRA.Mods.Common.Widgets.Logic
 			}
 			catch (Exception ex)
 			{
-				SetNewsStatus("Failed to parse news: {0}".F(ex.Message));
+				SetNewsStatus(FieldLoader.Translate("MAINMENU-NEWS-FAILED-PARSE").F(ex.Message));
 			}
 
 			return null;
@@ -397,7 +397,7 @@ namespace OpenRA.Mods.Common.Widgets.Logic
 			{
 				if (e.Error != null)
 				{
-					SetNewsStatus("Failed to retrieve news: {0}".F(Download.FormatErrorMessage(e.Error)));
+					SetNewsStatus(FieldLoader.Translate("MAINMENU-NEWS-FAILED-RETRIEVE").F(Download.FormatErrorMessage(e.Error)));
 					return;
 				}
 
@@ -428,7 +428,7 @@ namespace OpenRA.Mods.Common.Widgets.Logic
 				titleLabel.GetText = () => item.Title;
 
 				var authorDateTimeLabel = newsItem.Get<LabelWidget>("AUTHOR_DATETIME");
-				var authorDateTime = authorDateTimeLabel.Text.F(item.Author, item.DateTime.ToLocalTime());
+				var authorDateTime = FieldLoader.Translate("MAINMENU-NEWS-AUTHORDATETIME-FORMAT").F(item.Author, item.DateTime.ToLocalTime());
 				authorDateTimeLabel.GetText = () => authorDateTime;
 
 				var contentLabel = newsItem.Get<LabelWidget>("CONTENT");

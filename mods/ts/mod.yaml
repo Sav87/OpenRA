@@ -185,6 +185,8 @@ Music:
 	ts|audio/music.yaml
 
 Translations:
+	common|languages/english.yaml
+    common|languages/russian.yaml 
 	ts|languages/english.yaml
 
 Hotkeys:

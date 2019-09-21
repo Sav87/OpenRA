@@ -166,7 +166,7 @@ namespace OpenRA
 		public int BatchSize = 8192;
 		public int SheetSize = 2048;
 
-		public string Language = "english";
+		public string Language = "";
 		public string DefaultLanguage = "english";
 	}
 

@@ -59,6 +59,8 @@ namespace OpenRA
 			ModFiles.LoadFromManifest(Manifest);
 			Manifest.LoadCustomData(ObjectCreator);
 
+			LoadTranslationsUI(mod.Id == "modcontent");
+
 			if (useLoadScreen)
 			{
 				LoadScreen = ObjectCreator.CreateObject<ILoadScreen>(Manifest.LoadScreen.Value);
@@ -139,19 +141,30 @@ namespace OpenRA
 
 		public IEnumerable<string> Languages { get; private set; }
 
-		void LoadTranslations(Map map)
+		void LoadTranslationsUI(bool ñoncat = false)
 		{
-			var selectedTranslations = new Dictionary<string, string>();
-			var defaultTranslations = new Dictionary<string, string>();
+			var translations = new Dictionary<string, string>();
 
 			if (!Manifest.Translations.Any())
 			{
 				Languages = new string[0];
-				return;
+			}
+			else
+			{
+				var yaml = MiniYaml.Load(ModFiles, Manifest.Translations, null);
+				Languages = yaml.Select(t => t.Key).ToArray();
+
+				translations = LoadTranslations(yaml);
 			}
 
-			var yaml = MiniYaml.Load(map, Manifest.Translations, map.TranslationDefinitions);
-			Languages = yaml.Select(t => t.Key).ToArray();
+			FieldLoader.SetTranslationsUI(translations, ñoncat);
+		}
+
+		Dictionary<string, string> LoadTranslations(List<MiniYamlNode> yaml)
+		{
+			var selectedTranslations = new Dictionary<string, string>();
+			var defaultTranslations = new Dictionary<string, string>();
+			var translations = new Dictionary<string, string>();
 
 			foreach (var y in yaml)
 			{
@@ -161,7 +174,6 @@ namespace OpenRA
 					defaultTranslations = y.Value.ToDictionary(my => my.Value ?? "");
 			}
 
-			var translations = new Dictionary<string, string>();
 			foreach (var tkv in defaultTranslations.Concat(selectedTranslations))
 			{
 				if (translations.ContainsKey(tkv.Key))
@@ -172,7 +184,16 @@ namespace OpenRA
 					translations.Add(tkv.Key, tkv.Value);
 			}
 
-			FieldLoader.SetTranslations(translations);
+			return translations;
+		}
+
+		void LoadTranslationsMap(Map map)
+		{
+			var yaml = MiniYaml.Load(map, null, map.TranslationDefinitions);
+
+			var translations = LoadTranslations(yaml);
+
+			FieldLoader.SetTranslationsMap(translations);
 		}
 
 		public Map PrepareMap(string uid)
@@ -187,7 +208,7 @@ namespace OpenRA
 			using (new Support.PerfTimer("Map"))
 				map = new Map(this, MapCache[uid].Package);
 
-			LoadTranslations(map);
+			LoadTranslationsMap(map);
 
 			// Reinitialize all our assets
 			InitializeLoaders(map);

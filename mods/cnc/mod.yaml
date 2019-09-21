@@ -139,7 +139,10 @@ Music:
 	cnc|audio/music.yaml
 
 Translations:
-	cnc|languages/english.yaml
+	common|languages/english.yaml
+    common|languages/russian.yaml 
+	cnc|languages/english.yaml 
+	cnc|languages/russian.yaml
 
 Hotkeys:
 	common|hotkeys/game.yaml

@@ -458,6 +458,11 @@ namespace OpenRA
 
 		public static List<MiniYamlNode> Load(IReadOnlyFileSystem fileSystem, IEnumerable<string> files, MiniYaml mapRules)
 		{
+			if (files == null)
+			{
+				files = new string[0];
+			}
+
 			if (mapRules != null && mapRules.Value != null)
 			{
 				var mapFiles = FieldLoader.GetValue<string[]>("value", mapRules.Value);

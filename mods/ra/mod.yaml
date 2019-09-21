@@ -143,6 +143,8 @@ Music:
 	ra|audio/music.yaml
 
 Translations:
+	common|languages/english.yaml
+    common|languages/russian.yaml 
 	ra|languages/english.yaml
 
 Hotkeys:

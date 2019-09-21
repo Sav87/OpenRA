@@ -1,0 +1,42 @@
+russian:
+	russian: Русский
+
+	# \chrome/mainmenu.yaml
+	MAINMENU_C_TITLE: OpenRA
+	MAINMENU_C_SINGLEPLAYER_BUTTON: Одиночная
+	MAINMENU_C_MULTIPLAYER_BUTTON: Сетевая
+	MAINMENU_C_SETTINGS_BUTTON: Настройки
+	MAINMENU_C_EXTRAS_BUTTON: Больше
+	MAINMENU_C_CONTENT_BUTTON: Контент
+	MAINMENU_C_QUIT_BUTTON: Выход
+	MAINMENU_C_SINGLEPLAYER_TITLE: Одиночная
+	MAINMENU_C_SINGLEPLAYER_SKIRMISH_BUTTON: Схватка
+	MAINMENU_C_SINGLEPLAYER_MISSIONS_BUTTON: Миссии
+	MAINMENU_C_SINGLEPLAYER_LOAD_BUTTON: Загруить
+	MAINMENU_C_SINGLEPLAYER_BACK_BUTTON: Назад
+	MAINMENU_C_EXTRAS_TITLE: Больше
+	MAINMENU_C_EXTRAS_REPLAYS_BUTTON: Повторы
+	MAINMENU_C_EXTRAS_MUSIC_BUTTON: Музыка
+	MAINMENU_C_EXTRAS_MAP_EDITOR_BUTTON: Редактор карт
+	MAINMENU_C_EXTRAS_ASSETBROWSER_BUTTON: Браузер
+	MAINMENU_C_EXTRAS_CREDITS_BUTTON: Благодарность
+	MAINMENU_C_EXTRAS_BACK_BUTTON: Назад
+	MAINMENU_C_MAP_EDITOR_TITLE: Редактор карт
+	MAINMENU_C_MAP_EDITOR_NEW_MAP_BUTTON: Новая
+	MAINMENU_C_MAP_EDITOR_LOAD_MAP_BUTTON: Загрузить
+	MAINMENU_C_MAP_EDITOR_BACK_BUTTON: Назад
+	MAINMENU_C_SYSTEM_INFO_TITLE: Системная информация
+	MAINMENU_C_SYSTEM_INFO_TEXT: Помогите нам оптимизировать OpenRA. Анонимно.\nС вашего разрешения будет отправлена следующая информация:
+	MAINMENU_C_SYSTEM_INFO_SYSINFO_CHECKBOX: Отправить информацию о системе
+	MAINMENU_C_SYSTEM_INFO_BACK_BUTTON: Продолжить
+	MAINMENU_C_NEWS_BG_NEWS_BUTTON: Новости с фронта
+	MAINMENU_C_UPDATE_NOTICE: Вы используете устаревшую версию OpenRA.\n Загрузите последнюю версию с www.openra.net
+	
+	# MainMenuLogic.cs
+	MAINMENU-NEWS-AUTHORDATETIME-FORMAT: {0} в {1}
+	MAINMENU-NEWS-LOADING: Загружаем новости
+	MAINMENU-NEWS-FAILED-PARSE: Ошибка разбора: {0}
+	MAINMENU-NEWS-FAILED-RETRIEVE: Не удалось получить новости: {0}
+
+	# PerfDebugLogic.cs
+	PERFDEBUG-TEXT: ФПС: {0}\nТик {1} @ {2:F1} ms\nРендеринг {3} @ {4:F1} ms\nПакеты: {5}
