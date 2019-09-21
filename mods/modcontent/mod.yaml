@@ -66,3 +66,7 @@ SpriteFormats: ShpTD
 SpriteSequenceFormat: DefaultSpriteSequence
 
 ModelSequenceFormat: PlaceholderModelSequence
+
+Translations:
+	modcontent|languages/english.yaml
+	modcontent|languages/russian.yaml

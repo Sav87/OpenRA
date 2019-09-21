@@ -181,3 +181,6 @@ scrollbar: chrome.png
 	down_pressed: 480,512,16,16
 	up_arrow: 480,528,16,16
 	up_pressed: 480,528,16,16
+
+dropdown: chrome.png
+    separator: 480,512,16,16

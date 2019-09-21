@@ -1,3 +1,87 @@
+ScrollPanel@LABEL_DROPDOWN_TEMPLATE:
+	Width: DROPDOWN_WIDTH
+	Children:
+		ScrollItem@HEADER:
+			BaseName: scrollheader
+			Width: PARENT_RIGHT - 27
+			Height: 13
+			X: 2
+			Y: 0
+			Visible: false
+			Children:
+				Label@LABEL:
+					Font: TinyBold
+					Width: PARENT_RIGHT
+					Height: 10
+					Align: Center
+		ScrollItem@TEMPLATE:
+			Width: PARENT_RIGHT - 27
+			Height: 25
+			X: 2
+			Y: 0
+			Visible: false
+			Children:
+				Label@LABEL:
+					X: 10
+					Width: PARENT_RIGHT - 20
+					Height: 25 
+Background@LOCALIZATION_PANEL:
+	Logic: LocalizationLogic
+	X: (WINDOW_RIGHT - WIDTH) / 2
+	Y: (WINDOW_BOTTOM - HEIGHT) / 2
+	Width: 500
+	Height: 290
+	Background: panel-bg
+	Children:
+		Background@RULE:
+			X: 30
+			Y: 50
+			Width: 440
+			Height: 150
+			Background: panel-rule
+		Label@TITLE:
+			X: 0
+			Y: 12
+			Width: PARENT_RIGHT
+			Height: 25
+			Text: @LOCALIZATION_TITLE@
+			Align: Center
+			Font: MediumBold
+		Label@HEADER_TEMPLATE:
+			Y: 65
+			Width: PARENT_RIGHT
+			Height: 16
+			Align: Center
+        Label@LANGUAGE_LABEL:
+            X: 230 - WIDTH - 5
+            Y: 119
+            Width: 75
+            Height: 25
+            Align: Right
+            Text: @LOCALIZATION_LABEL@
+            Visible: true
+        DropDownButton@LANGUAGE_DROPDOWNBUTTON:
+            X: 230
+            Y: 120
+            Width: 200
+            Height: 25
+        Label@LANGUAGE_DESC:
+			WordWrap: True
+            Y: 145
+            Width: PARENT_RIGHT
+            Height: 25
+            Font: Tiny
+            Align: Center
+            Text: @LOCALIZATION_DESC@
+		Button@CONTINUE_BUTTON:
+			X: PARENT_RIGHT - 140
+			Y: PARENT_BOTTOM - 52
+			Background: button-highlighted
+			Width: 110
+			Height: 32
+			Text: @LOCALIZATION_CONTINUE_BUTTON@
+			Font: Bold
+			Key: escape
 Background@CONTENT_PANEL:
 	Logic: ModContentLogic
 	X: (WINDOW_RIGHT - WIDTH) / 2

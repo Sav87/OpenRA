@@ -59,7 +59,16 @@ namespace OpenRA.Mods.Common.LoadScreens
 
 			Ui.LoadWidget("MODCONTENT_BACKGROUND", Ui.Root, new WidgetArgs());
 
-			if (!IsModInstalled(content))
+			if (string.IsNullOrEmpty(Game.Settings.Graphics.Language))
+			{
+				var widgetArgs = new WidgetArgs
+				{
+					{ "continueLoading", () => Game.RunAfterTick(() => Game.InitializeMod(modId, new Arguments())) },
+				};
+
+				Ui.OpenWindow("LOCALIZATION_PANEL", widgetArgs);
+			}
+			else if (!IsModInstalled(content))
 			{
 				var widgetArgs = new WidgetArgs
 				{
