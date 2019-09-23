@@ -82,6 +82,7 @@ namespace OpenRA
 			public MapStatus Status;
 			public MapClassification Class;
 			public MapVisibility Visibility;
+			public Dictionary<string, string> Translations;
 
 			Lazy<Ruleset> rules;
 			public Ruleset Rules { get { return rules != null ? rules.Value : null; } }
@@ -151,6 +152,8 @@ namespace OpenRA
 		public MapStatus Status { get { return innerData.Status; } }
 		public MapClassification Class { get { return innerData.Class; } }
 		public MapVisibility Visibility { get { return innerData.Visibility; } }
+
+		public Dictionary<string, string> Translations { get { return innerData.Translations ?? new Dictionary<string, string>(); } }
 
 		public Ruleset Rules { get { return innerData.Rules; } }
 		public bool InvalidCustomRules { get { return innerData.InvalidCustomRules; } }
@@ -258,6 +261,13 @@ namespace OpenRA
 
 			if (yaml.TryGetValue("Visibility", out temp))
 				newData.Visibility = FieldLoader.GetValue<MapVisibility>("Visibility", temp.Value);
+
+			yaml.TryGetValue("Translation", out temp);
+			if (temp != null)
+			{
+				var yam = MiniYaml.Load(this, null, temp);
+				newData.Translations = ModData.LoadTranslations(yam);
+			}
 
 			string requiresMod = string.Empty;
 			if (yaml.TryGetValue("RequiresMod", out temp))

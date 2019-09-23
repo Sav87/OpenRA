@@ -205,6 +205,7 @@ namespace OpenRA
 		public readonly MiniYaml MusicDefinitions;
 		public readonly MiniYaml NotificationDefinitions;
 		public readonly MiniYaml TranslationDefinitions;
+		public readonly Dictionary<string, string> Translations;
 
 		// Generated data
 		public readonly MapGrid Grid;
@@ -329,6 +330,13 @@ namespace OpenRA
 
 			PlayerDefinitions = MiniYaml.NodesOrEmpty(yaml, "Players");
 			ActorDefinitions = MiniYaml.NodesOrEmpty(yaml, "Actors");
+
+			yaml.ToDictionary().TryGetValue("Translation", out TranslationDefinitions);
+			if (TranslationDefinitions != null)
+			{
+				var yam = MiniYaml.Load(modData.ModFiles, null, TranslationDefinitions);
+				Translations = ModData.LoadTranslations(yam);
+			}
 
 			Grid = modData.Manifest.Get<MapGrid>();
 

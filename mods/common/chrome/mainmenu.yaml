@@ -43,7 +43,7 @@ Container@MAINMENU:
 							Y: 22
 							Width: 200
 							Height: 30
-							Text: @MAINMENU_C_TITLE@
+							Text: @MAINMENU-C-TITLE@
 							Align: Center
 							Font: Bold
 						Button@SINGLEPLAYER_BUTTON:
@@ -51,42 +51,42 @@ Container@MAINMENU:
 							Y: 60
 							Width: 140
 							Height: 30
-							Text: @MAINMENU_C_SINGLEPLAYER_BUTTON@
+							Text: @MAINMENU-C-SINGLEPLAYER-BUTTON@
 							Font: Bold
 						Button@MULTIPLAYER_BUTTON:
 							X: PARENT_RIGHT / 2 - WIDTH / 2
 							Y: 100
 							Width: 140
 							Height: 30
-							Text: @MAINMENU_C_MULTIPLAYER_BUTTON@
+							Text: @MAINMENU-C-MULTIPLAYER-BUTTON@
 							Font: Bold
 						Button@SETTINGS_BUTTON:
 							X: PARENT_RIGHT / 2 - WIDTH / 2
 							Y: 140
 							Width: 140
 							Height: 30
-							Text: @MAINMENU_C_SETTINGS_BUTTON@
+							Text: @MAINMENU-C-SETTINGS-BUTTON@
 							Font: Bold
 						Button@EXTRAS_BUTTON:
 							X: PARENT_RIGHT / 2 - WIDTH / 2
 							Y: 180
 							Width: 140
 							Height: 30
-							Text: @MAINMENU_C_EXTRAS_BUTTON@
+							Text: @MAINMENU-C-EXTRAS-BUTTON@
 							Font: Bold
 						Button@CONTENT_BUTTON:
 							X: PARENT_RIGHT / 2 - WIDTH / 2
 							Y: 220
 							Width: 140
 							Height: 30
-							Text: @MAINMENU_C_CONTENT_BUTTON@
+							Text: @MAINMENU-C-CONTENT-BUTTON@
 							Font: Bold
 						Button@QUIT_BUTTON:
 							X: PARENT_RIGHT / 2 - WIDTH / 2
 							Y: 260
 							Width: 140
 							Height: 30
-							Text: @MAINMENU_C_QUIT_BUTTON@
+							Text: @MAINMENU-C-QUIT-BUTTON@
 							Font: Bold
 				Background@SINGLEPLAYER_MENU:
 					Width: PARENT_RIGHT
@@ -97,7 +97,7 @@ Container@MAINMENU:
 							Y: 20
 							Width: 200
 							Height: 30
-							Text: @MAINMENU_C_SINGLEPLAYER_TITLE@
+							Text: @MAINMENU-C-SINGLEPLAYER-TITLE@
 							Align: Center
 							Font: Bold
 						Button@SKIRMISH_BUTTON:
@@ -105,21 +105,21 @@ Container@MAINMENU:
 							Y: 60
 							Width: 140
 							Height: 30
-							Text: @MAINMENU_C_SINGLEPLAYER_SKIRMISH_BUTTON@
+							Text: @MAINMENU-C-SINGLEPLAYER-SKIRMISH-BUTTON@
 							Font: Bold
 						Button@MISSIONS_BUTTON:
 							X: PARENT_RIGHT / 2 - WIDTH / 2
 							Y: 100
 							Width: 140
 							Height: 30
-							Text: @MAINMENU_C_SINGLEPLAYER_MISSIONS_BUTTON@
+							Text: @MAINMENU-C-SINGLEPLAYER-MISSIONS-BUTTON@
 							Font: Bold
 						Button@LOAD_BUTTON:
 							X: PARENT_RIGHT / 2 - WIDTH / 2
 							Y: 140
 							Width: 140
 							Height: 30
-							Text: @MAINMENU_C_SINGLEPLAYER_LOAD_BUTTON@
+							Text: @MAINMENU-C-SINGLEPLAYER-LOAD-BUTTON@
 							Font: Bold
 						Button@BACK_BUTTON:
 							X: PARENT_RIGHT / 2 - WIDTH / 2
@@ -127,7 +127,7 @@ Container@MAINMENU:
 							Y: 260
 							Width: 140
 							Height: 30
-							Text: @MAINMENU_C_SINGLEPLAYER_BACK_BUTTON@
+							Text: @MAINMENU-C-SINGLEPLAYER-BACK-BUTTON@
 							Font: Bold
 				Background@EXTRAS_MENU:
 					Width: PARENT_RIGHT
@@ -138,7 +138,7 @@ Container@MAINMENU:
 							Y: 20
 							Width: 200
 							Height: 30
-							Text: @MAINMENU_C_EXTRAS_TITLE@
+							Text: @MAINMENU-C-EXTRAS-TITLE@
 							Align: Center
 							Font: Bold
 						Button@REPLAYS_BUTTON:
@@ -146,35 +146,35 @@ Container@MAINMENU:
 							Y: 60
 							Width: 140
 							Height: 30
-							Text: @MAINMENU_C_EXTRAS_REPLAYS_BUTTON@
+							Text: @MAINMENU-C-EXTRAS-REPLAYS-BUTTON@
 							Font: Bold
 						Button@MUSIC_BUTTON:
 							X: PARENT_RIGHT / 2 - WIDTH / 2
 							Y: 100
 							Width: 140
 							Height: 30
-							Text: @MAINMENU_C_EXTRAS_MUSIC_BUTTON@
+							Text: @MAINMENU-C-EXTRAS-MUSIC-BUTTON@
 							Font: Bold
 						Button@MAP_EDITOR_BUTTON:
 							X: PARENT_RIGHT / 2 - WIDTH / 2
 							Y: 140
 							Width: 140
 							Height: 30
-							Text: @MAINMENU_C_EXTRAS_MAP_EDITOR_BUTTON@
+							Text: @MAINMENU-C-EXTRAS-MAP-EDITOR-BUTTON@
 							Font: Bold
 						Button@ASSETBROWSER_BUTTON:
 							X: PARENT_RIGHT / 2 - WIDTH / 2
 							Y: 180
 							Width: 140
 							Height: 30
-							Text: @MAINMENU_C_EXTRAS_ASSETBROWSER_BUTTON@
+							Text: @MAINMENU-C-EXTRAS-ASSETBROWSER-BUTTON@
 							Font: Bold
 						Button@CREDITS_BUTTON:
 							X: PARENT_RIGHT / 2 - WIDTH / 2
 							Y: 220
 							Width: 140
 							Height: 30
-							Text: @MAINMENU_C_EXTRAS_CREDITS_BUTTON@
+							Text: @MAINMENU-C-EXTRAS-CREDITS-BUTTON@
 							Font: Bold
 						Button@BACK_BUTTON:
 							X: PARENT_RIGHT / 2 - WIDTH / 2
@@ -182,7 +182,7 @@ Container@MAINMENU:
 							Y: 260
 							Width: 140
 							Height: 30
-							Text: @MAINMENU_C_EXTRAS_BACK_BUTTON@
+							Text: @MAINMENU-C-EXTRAS-BACK-BUTTON@
 							Font: Bold
 				Background@MAP_EDITOR_MENU:
 					Width: PARENT_RIGHT
@@ -193,7 +193,7 @@ Container@MAINMENU:
 							Y: 20
 							Width: 200
 							Height: 30
-							Text: @MAINMENU_C_MAP_EDITOR_TITLE@
+							Text: @MAINMENU-C-MAP-EDITOR-TITLE@
 							Align: Center
 							Font: Bold
 						Button@NEW_MAP_BUTTON:
@@ -201,14 +201,14 @@ Container@MAINMENU:
 							Y: 60
 							Width: 140
 							Height: 30
-							Text: @MAINMENU_C_MAP_EDITOR_NEW_MAP_BUTTON@
+							Text: @MAINMENU-C-MAP-EDITOR-NEW-MAP-BUTTON@
 							Font: Bold
 						Button@LOAD_MAP_BUTTON:
 							X: PARENT_RIGHT / 2 - WIDTH / 2
 							Y: 100
 							Width: 140
 							Height: 30
-							Text: @MAINMENU_C_MAP_EDITOR_LOAD_MAP_BUTTON@
+							Text: @MAINMENU-C-MAP-EDITOR-LOAD-MAP-BUTTON@
 							Font: Bold
 						Button@BACK_BUTTON:
 							X: PARENT_RIGHT / 2 - WIDTH / 2
@@ -216,7 +216,7 @@ Container@MAINMENU:
 							Y: 260
 							Width: 140
 							Height: 30
-							Text: @MAINMENU_C_MAP_EDITOR_BACK_BUTTON@
+							Text: @MAINMENU-C-MAP-EDITOR-BACK-BUTTON@
 							Font: Bold
 		Background@SYSTEM_INFO_PROMPT:
 			X: (WINDOW_RIGHT - WIDTH) / 2
@@ -230,7 +230,7 @@ Container@MAINMENU:
 					Height: 25
 					Font: Bold
 					Align: Center
-					Text: @MAINMENU_C_SYSTEM_INFO_TITLE@
+					Text: @MAINMENU-C-SYSTEM-INFO-TITLE@
 				Label@PROMPT_TEXT_A:
 					WordWrap: True 
 					X: 15
@@ -238,7 +238,7 @@ Container@MAINMENU:
 					Width: PARENT_RIGHT - 30
 					Height: 16
 					Align: Center
-					Text: @MAINMENU_C_SYSTEM_INFO_TEXT@
+					Text: @MAINMENU-C-SYSTEM-INFO-TEXT@
 				ScrollPanel@SYSINFO_DATA:
 					X: 20
 					Y: 98
@@ -258,13 +258,13 @@ Container@MAINMENU:
 					Width: 200
 					Height: 20
 					Font: Regular
-					Text: @MAINMENU_C_SYSTEM_INFO_SYSINFO_CHECKBOX@
+					Text: @MAINMENU-C-SYSTEM-INFO-SYSINFO-CHECKBOX@
 				Button@BACK_BUTTON:
 					X: PARENT_RIGHT - WIDTH - 20
 					Y: PARENT_BOTTOM - 45
 					Width: 120
 					Height: 25
-					Text: @MAINMENU_C_SYSTEM_INFO_BACK_BUTTON@
+					Text: @MAINMENU-C-SYSTEM-INFO-BACK-BUTTON@
 					Font: Bold
 					Key: return
 		Container@PERFORMANCE_INFO:
@@ -301,7 +301,7 @@ Container@MAINMENU:
 					Y: 15
 					Width: 400
 					Height: 25
-					Text: @MAINMENU_C_NEWS_BG_NEWS_BUTTON@
+					Text: @MAINMENU-C-NEWS-BG-NEWS-BUTTON@
 					Font: Bold
 		Container@UPDATE_NOTICE:
 			X: (WINDOW_RIGHT - WIDTH) / 2
@@ -314,7 +314,7 @@ Container@MAINMENU:
 					Height: 25
 					Align: Center
 					Shadow: true
-					Text: @MAINMENU_C_UPDATE_NOTICE@
+					Text: @MAINMENU-C-UPDATE-NOTICE@
 		Container@PLAYER_PROFILE_CONTAINER:
 			X: 25
 			Y: 25

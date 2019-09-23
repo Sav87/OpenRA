@@ -771,6 +771,7 @@ namespace OpenRA
 
 		private static void AddTransations(IDictionary<string, string> translations)
 		{
+			if (translations == null) return;
 			foreach (var tkv in translations)
 			{
 				if (FieldLoader.translations.ContainsKey(tkv.Key))

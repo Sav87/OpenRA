@@ -131,7 +131,7 @@ namespace OpenRA.Mods.Common.Widgets.Logic
 
 			if (loosePreviews.Any())
 			{
-				CreateMissionGroup("Missions", loosePreviews);
+				CreateMissionGroup(FieldLoader.Translate("MISSIONBROWSER-GROUP-MISSIONS"), loosePreviews);
 				allPreviews.AddRange(loosePreviews);
 			}
 
@@ -192,8 +192,13 @@ namespace OpenRA.Mods.Common.Widgets.Logic
 					() => SelectMap(preview),
 					StartMissionClicked);
 
+				var tr = preview.Translations;
+				string txtTitle;
+				if ((tr == null) || (!tr.TryGetValue("MISSION-TITLE", out txtTitle)))
+					txtTitle = preview.Title;
+
 				var label = item.Get<LabelWithTooltipWidget>("TITLE");
-				WidgetUtils.TruncateLabelToTooltip(label, preview.Title);
+				WidgetUtils.TruncateLabelToTooltip(label, txtTitle);
 
 				missionList.AddChild(item);
 			}
@@ -234,7 +239,12 @@ namespace OpenRA.Mods.Common.Widgets.Logic
 					infoVideo = missionData.BackgroundVideo;
 					infoVideoVisible = infoVideo != null;
 
-					var briefing = WidgetUtils.WrapText(missionData.Briefing.Replace("\\n", "\n"), description.Bounds.Width, descriptionFont);
+					var tr = preview.Translations;
+					string txtbriefing;
+					if ((tr == null) || (!preview.Translations.TryGetValue("MISSION-BRIEFING", out txtbriefing)))
+						txtbriefing = missionData.Briefing.Replace("\\n", "\n");
+
+					var briefing = WidgetUtils.WrapText(txtbriefing, description.Bounds.Width, descriptionFont);
 					var height = descriptionFont.Measure(briefing).Y;
 					Game.RunAfterTick(() =>
 					{
@@ -331,9 +341,9 @@ namespace OpenRA.Mods.Common.Widgets.Logic
 			if (!modData.DefaultFileSystem.Exists(video))
 			{
 				ConfirmationDialogs.ButtonPrompt(
-					title: "Video not installed",
-					text: "The game videos can be installed from the\n\"Manage Content\" menu in the mod chooser.",
-					cancelText: "Back",
+					title: FieldLoader.Translate("MISSIONBROWSER-CONFIRM-TITLE"),
+					text: FieldLoader.Translate("MISSIONBROWSER-CONFIRM-TEXT"),
+					cancelText: FieldLoader.Translate("MISSIONBROWSER-CONFIRM-CANCEL"),
 					onCancel: () => { });
 			}
 			else

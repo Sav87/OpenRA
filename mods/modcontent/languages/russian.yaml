@@ -2,7 +2,7 @@ russian:
     russian: Русский
 
 	# LocalizationLogic.cs
-    LOCALIZATION_TITLE: Перевод
-    LOCALIZATION_LABEL: Язык:
-    LOCALIZATION_DESC: Изменения будут применены после перезапуска игры.\nПеревод применяется только к тексту. Звук и иконки останутся на английском.
-	LOCALIZATION_CONTINUE_BUTTON: Продолжить
+    LOCALIZATION-TITLE: Перевод
+    LOCALIZATION-LABEL: Язык:
+    LOCALIZATION-DESC: Изменения будут применены после перезапуска игры.\nПеревод применяется только к тексту. Звук и иконки останутся на английском.
+	LOCALIZATION-CONTINUE-BUTTON: Продолжить

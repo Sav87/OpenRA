@@ -9,7 +9,7 @@ Background@MISSIONBROWSER_PANEL:
 			Y: 20
 			Width: PARENT_RIGHT
 			Height: 25
-			Text: Missions
+			Text: @MISSIONBROWSER-C-TITLE@
 			Align: Center
 			Font: Bold
 		ScrollPanel@MISSION_LIST:
@@ -47,7 +47,7 @@ Background@MISSIONBROWSER_PANEL:
 			Y: 468
 			Width: 56
 			Height: 25
-			Text: Difficulty:
+			Text: @MISSIONBROWSER-C-DIFFICULTY-DESC@
 			Align: Right
 		DropDownButton@DIFFICULTY_DROPDOWNBUTTON:
 			X: 210 - WIDTH
@@ -60,7 +60,7 @@ Background@MISSIONBROWSER_PANEL:
 			Y: 508
 			Width: 120
 			Height: 25
-			Text: Speed:
+			Text: @MISSIONBROWSER-C-GAMESPEED-DESC@
 			Align: Right
 		DropDownButton@GAMESPEED_DROPDOWNBUTTON:
 			X: 210 - WIDTH
@@ -103,42 +103,42 @@ Background@MISSIONBROWSER_PANEL:
 			Y: PARENT_BOTTOM - 45
 			Width: 130
 			Height: 25
-			Text: Watch Briefing
+			Text: @MISSIONBROWSER-C-START-BRIEFING-VIDEO-BUTTON@
 			Font: Bold
 		Button@STOP_BRIEFING_VIDEO_BUTTON:
 			X: 220
 			Y: PARENT_BOTTOM - 45
 			Width: 130
 			Height: 25
-			Text: Stop Briefing
+			Text: @MISSIONBROWSER-C-STOP-BRIEFING-VIDEO-BUTTON@
 			Font: Bold
 		Button@START_INFO_VIDEO_BUTTON:
 			X: 360
 			Y: PARENT_BOTTOM - 45
 			Width: 130
 			Height: 25
-			Text: Watch Info Video
+			Text: @MISSIONBROWSER-C-START-INFO-VIDEO-BUTTON@
 			Font: Bold
 		Button@STOP_INFO_VIDEO_BUTTON:
 			X: 360
 			Y: PARENT_BOTTOM - 45
 			Width: 130
 			Height: 25
-			Text: Stop Info Video
+			Text: @MISSIONBROWSER-C-STOP-INFO-VIDEO-BUTTON@
 			Font: Bold
 		Button@STARTGAME_BUTTON:
 			X: PARENT_RIGHT - 140 - 130
 			Y: PARENT_BOTTOM - 45
 			Width: 120
 			Height: 25
-			Text: Play
+			Text: @MISSIONBROWSER-C-STARTGAME-BUTTON@
 			Font: Bold
 		Button@BACK_BUTTON:
 			X: PARENT_RIGHT - 140
 			Y: PARENT_BOTTOM - 45
 			Width: 120
 			Height: 25
-			Text: Back
+			Text: @MISSIONBROWSER-C-BACK-BUTTON@
 			Font: Bold
 			Key: escape
 		Background@MISSION_BIN:

@@ -53,11 +53,13 @@ AtreidesEntryPath = { AtreidesWaypoint.Location, AtreidesRally.Location }
 
 Messages =
 {
-	"Build a concrete foundation before placing your buildings.",
-	"Build a Wind Trap for power.",
-	"Build a Refinery to collect Spice.",
-	"Build a Silo to store additional Spice."
+	UserInterface.GetTranslation("MISSION-MSG-1"),
+	UserInterface.GetTranslation("MISSION-MSG-2"),
+	UserInterface.GetTranslation("MISSION-MSG-3"),
+	UserInterface.GetTranslation("MISSION-MSG-4")
 }
+
+txtMentat = UserInterface.GetTranslation("MISSION-MSG-MENTAT")
 
 Tick = function()
 	if HarkonnenArrived and harkonnen.HasNoRequiredUnits() then
@@ -71,18 +73,18 @@ Tick = function()
 	-- player has no Wind Trap
 	if (player.PowerProvided <= 20 or player.PowerState ~= "Normal") and DateTime.GameTime % DateTime.Seconds(32) == 0 then
 		HasPower = false
-		Media.DisplayMessage(Messages[2], "Mentat")
+		Media.DisplayMessage(Messages[2], txtMentat)
 	else
 		HasPower = true
 	end
 
 	-- player has no Refinery and no Silos
 	if HasPower and player.ResourceCapacity == 0 and DateTime.GameTime % DateTime.Seconds(32) == 0 then
-		Media.DisplayMessage(Messages[3], "Mentat")
+		Media.DisplayMessage(Messages[3], txtMentat)
 	end
 
 	if HasPower and player.Resources > player.ResourceCapacity * 0.8 and DateTime.GameTime % DateTime.Seconds(32) == 0 then
-		Media.DisplayMessage(Messages[4], "Mentat")
+		Media.DisplayMessage(Messages[4], txtMentat)
 	end
 
 	UserInterface.SetMissionText("Harvested resources: " .. player.Resources .. "/" .. SpiceToHarvest, player.Color)
@@ -133,7 +135,7 @@ WorldLoaded = function()
 		end
 	end)
 
-	Media.DisplayMessage(Messages[1], "Mentat")
+	Media.DisplayMessage(Messages[1], txtMentat)
 
 	Trigger.AfterDelay(DateTime.Seconds(25), function()
 		Media.PlaySpeechNotification(player, "Reinforce")

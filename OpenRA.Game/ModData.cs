@@ -160,7 +160,7 @@ namespace OpenRA
 			FieldLoader.SetTranslationsUI(translations, ñoncat);
 		}
 
-		Dictionary<string, string> LoadTranslations(List<MiniYamlNode> yaml)
+		public static Dictionary<string, string> LoadTranslations(List<MiniYamlNode> yaml)
 		{
 			var selectedTranslations = new Dictionary<string, string>();
 			var defaultTranslations = new Dictionary<string, string>();
@@ -189,9 +189,7 @@ namespace OpenRA
 
 		void LoadTranslationsMap(Map map)
 		{
-			var yaml = MiniYaml.Load(map, null, map.TranslationDefinitions);
-
-			var translations = LoadTranslations(yaml);
+			var translations = map.Translations;
 
 			FieldLoader.SetTranslationsMap(translations);
 		}

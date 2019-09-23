@@ -2,7 +2,7 @@ english:
     english: English
 	
 	# LocalizationLogic.cs
-    LOCALIZATION_TITLE: Localization
-    LOCALIZATION_LABEL: Language:
-    LOCALIZATION_DESC: Language changes will be applied after the game is restarted\nTranslations apply to text strings only; Speech and build icons will remain in English
-	LOCALIZATION_CONTINUE_BUTTON: Continue
+    LOCALIZATION-TITLE: Localization
+    LOCALIZATION-LABEL: Language:
+    LOCALIZATION-DESC: Language changes will be applied after the game is restarted\nTranslations apply to text strings only; Speech and build icons will remain in English
+	LOCALIZATION-CONTINUE-BUTTON: Continue

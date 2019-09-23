@@ -54,7 +54,7 @@ Container@MENU_BACKGROUND:
 							Y: 0 - 28
 							Width: PARENT_RIGHT
 							Height: 20
-							Text: @MAINMENU_C_TITLE@
+							Text: @MAINMENU-C-TITLE@
 							Align: Center
 							Font: Bold
 							Contrast: True
@@ -63,37 +63,37 @@ Container@MENU_BACKGROUND:
 							Y: 0
 							Width: 140
 							Height: 35
-							Text: @MAINMENU_C_SINGLEPLAYER_BUTTON@
+							Text: @MAINMENU-C-SINGLEPLAYER-BUTTON@
 						Button@MULTIPLAYER_BUTTON:
 							X: 150
 							Y: 0
 							Width: 140
 							Height: 35
-							Text: @MAINMENU_C_MULTIPLAYER_BUTTON@
+							Text: @MAINMENU-C-MULTIPLAYER-BUTTON@
 						Button@SETTINGS_BUTTON:
 							X: 300
 							Y: 0
 							Width: 140
 							Height: 35
-							Text: @MAINMENU_C_SETTINGS_BUTTON@
+							Text: @MAINMENU-C-SETTINGS-BUTTON@
 						Button@EXTRAS_BUTTON:
 							X: 450
 							Y: 0
 							Width: 140
 							Height: 35
-							Text: @MAINMENU_C_EXTRAS_BUTTON@
+							Text: @MAINMENU-C-EXTRAS-BUTTON@
 						Button@CONTENT_BUTTON:
 							X: 600
 							Y: 0
 							Width: 140
 							Height: 35
-							Text: @MAINMENU_C_CONTENT_BUTTON@
+							Text: @MAINMENU-C-CONTENT-BUTTON@
 						Button@QUIT_BUTTON:
 							X: 750
 							Y: 0
 							Width: 140
 							Height: 35
-							Text: @MAINMENU_C_QUIT_BUTTON@
+							Text: @MAINMENU-C-QUIT-BUTTON@
 				Container@SINGLEPLAYER_MENU:
 					Width: PARENT_RIGHT
 					Visible: False
@@ -103,7 +103,7 @@ Container@MENU_BACKGROUND:
 							Y: 0 - 28
 							Width: PARENT_RIGHT
 							Height: 20
-							Text: @MAINMENU_C_SINGLEPLAYER_TITLE@
+							Text: @MAINMENU-C-SINGLEPLAYER-TITLE@
 							Align: Center
 							Font: Bold
 							Contrast: True
@@ -112,26 +112,26 @@ Container@MENU_BACKGROUND:
 							Y: 0
 							Width: 140
 							Height: 35
-							Text: @MAINMENU_C_SINGLEPLAYER_SKIRMISH_BUTTON@
+							Text: @MAINMENU-C-SINGLEPLAYER-SKIRMISH-BUTTON@
 						Button@MISSIONS_BUTTON:
 							X: 150
 							Y: 0
 							Width: 140
 							Height: 35
-							Text: @MAINMENU_C_SINGLEPLAYER_MISSIONS_BUTTON@
+							Text: @MAINMENU-C-SINGLEPLAYER-MISSIONS-BUTTON@
 						Button@LOAD_BUTTON:
 							X: 300
 							Y: 0
 							Width: 140
 							Height: 35
-							Text: @MAINMENU_C_SINGLEPLAYER_LOAD_BUTTON@
+							Text: @MAINMENU-C-SINGLEPLAYER-LOAD-BUTTON@
 						Button@BACK_BUTTON:
 							Key: escape
 							X: 450
 							Y: 0
 							Width: 140
 							Height: 35
-							Text: @MAINMENU_C_SINGLEPLAYER_BACK_BUTTON@
+							Text: @MAINMENU-C-SINGLEPLAYER-BACK-BUTTON@
 				Container@EXTRAS_MENU:
 					Width: PARENT_RIGHT
 					Visible: False
@@ -141,7 +141,7 @@ Container@MENU_BACKGROUND:
 							Y: 0 - 28
 							Width: PARENT_RIGHT
 							Height: 20
-							Text: @MAINMENU_C_EXTRAS_TITLE@
+							Text: @MAINMENU-C-EXTRAS-TITLE@
 							Align: Center
 							Font: Bold
 							Contrast: True
@@ -150,39 +150,39 @@ Container@MENU_BACKGROUND:
 							Y: 0
 							Width: 140
 							Height: 35
-							Text: @MAINMENU_C_EXTRAS_REPLAYS_BUTTON@
+							Text: @MAINMENU-C-EXTRAS-REPLAYS-BUTTON@
 						Button@MUSIC_BUTTON:
 							X: 150
 							Y: 0
 							Width: 140
 							Height: 35
-							Text: @MAINMENU_C_EXTRAS_MUSIC_BUTTON@
+							Text: @MAINMENU-C-EXTRAS-MUSIC-BUTTON@
 						Button@MAP_EDITOR_BUTTON:
 							X: 300
 							Y: 0
 							Width: 140
 							Height: 35
-							Text: @MAINMENU_C_EXTRAS_MAP_EDITOR_BUTTON@
+							Text: @MAINMENU-C-EXTRAS-MAP-EDITOR-BUTTON@
 							Font: Bold
 						Button@ASSETBROWSER_BUTTON:
 							X: 450
 							Y: 0
 							Width: 140
 							Height: 35
-							Text: @MAINMENU_C_EXTRAS_ASSETBROWSER_BUTTON@
+							Text: @MAINMENU-C-EXTRAS-ASSETBROWSER-BUTTON@
 						Button@CREDITS_BUTTON:
 							X: 600
 							Y: 0
 							Width: 140
 							Height: 35
-							Text: @MAINMENU_C_EXTRAS_CREDITS_BUTTON@
+							Text: @MAINMENU-C-EXTRAS-CREDITS-BUTTON@
 						Button@BACK_BUTTON:
 							Key: escape
 							X: 750
 							Y: 0
 							Width: 140
 							Height: 35
-							Text: @MAINMENU_C_EXTRAS_BACK_BUTTON@
+							Text: @MAINMENU-C-EXTRAS-BACK-BUTTON@
 				Container@MAP_EDITOR_MENU:
 					Width: PARENT_RIGHT
 					Visible: False
@@ -192,7 +192,7 @@ Container@MENU_BACKGROUND:
 							Y: 0 - 28
 							Width: PARENT_RIGHT
 							Height: 20
-							Text: @MAINMENU_C_MAP_EDITOR_TITLE@
+							Text: @MAINMENU-C-MAP-EDITOR-TITLE@
 							Align: Center
 							Font: Bold
 							Contrast: True
@@ -201,21 +201,21 @@ Container@MENU_BACKGROUND:
 							Y: 0
 							Width: 140
 							Height: 35
-							Text: @MAINMENU_C_MAP_EDITOR_NEW_MAP_BUTTON@
+							Text: @MAINMENU-C-MAP-EDITOR-NEW-MAP-BUTTON@
 							Font: Bold
 						Button@LOAD_MAP_BUTTON:
 							X: 150
 							Y: 0
 							Width: 140
 							Height: 35
-							Text: @MAINMENU_C_MAP_EDITOR_LOAD_MAP_BUTTON@
+							Text: @MAINMENU-C-MAP-EDITOR-LOAD-MAP-BUTTON@
 							Font: Bold
 						Button@BACK_BUTTON:
 							X: 300
 							Y: 0
 							Width: 140
 							Height: 35
-							Text: @MAINMENU_C_MAP_EDITOR_BACK_BUTTON@
+							Text: @MAINMENU-C-MAP-EDITOR-BACK-BUTTON@
 							Font: Bold
 							Key: escape
 		Container@SYSTEM_INFO_PROMPT:
@@ -230,7 +230,7 @@ Container@MENU_BACKGROUND:
 					Font: BigBold
 					Contrast: true
 					Align: Center
-					Text: @MAINMENU_C_SYSTEM_INFO_TITLE@
+					Text: @MAINMENU-C-SYSTEM-INFO-TITLE@
 				Background@bg:
 					Width: PARENT_RIGHT
 					Height: PARENT_BOTTOM
@@ -242,7 +242,7 @@ Container@MENU_BACKGROUND:
 							Width: PARENT_RIGHT - 30
 							Height: 16
 							Align: Center
-							Text: @MAINMENU_C_SYSTEM_INFO_TEXT@
+							Text: @MAINMENU-C-SYSTEM-INFO-TEXT@
 						ScrollPanel@SYSINFO_DATA:
 							X: 15
 							Y: 63
@@ -262,13 +262,13 @@ Container@MENU_BACKGROUND:
 							Width: 190
 							Height: 20
 							Font: Regular
-							Text: @MAINMENU_C_SYSTEM_INFO_SYSINFO_CHECKBOX@
+							Text: @MAINMENU-C-SYSTEM-INFO-SYSINFO-CHECKBOX@
 				Button@BACK_BUTTON:
 					X: PARENT_RIGHT - WIDTH
 					Y: PARENT_BOTTOM - 1
 					Width: 140
 					Height: 35
-					Text: @MAINMENU_C_SYSTEM_INFO_BACK_BUTTON@
+					Text: @MAINMENU-C-SYSTEM-INFO-BACK-BUTTON@
 					Font: Bold
 					Key: return
 		Container@NEWS_BG:
@@ -278,7 +278,7 @@ Container@MENU_BACKGROUND:
 					Y: 50
 					Width: 400
 					Height: 25
-					Text: @MAINMENU_C_NEWS_BG_NEWS_BUTTON@
+					Text: @MAINMENU-C-NEWS-BG-NEWS-BUTTON@
 					Font: Bold
 		Container@UPDATE_NOTICE:
 			X: (WINDOW_RIGHT - WIDTH) / 2
@@ -290,7 +290,7 @@ Container@MENU_BACKGROUND:
 					Height: 25
 					Align: Center
 					Shadow: true
-					Text: @MAINMENU_C_UPDATE_NOTICE@
+					Text: @MAINMENU-C-UPDATE-NOTICE@
 		Container@PERFORMANCE_INFO:
 			Logic: PerfDebugLogic
 			Children:

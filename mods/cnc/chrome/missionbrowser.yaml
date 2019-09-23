@@ -8,7 +8,7 @@ Container@MISSIONBROWSER_PANEL:
 		Label@MISSIONBROWSER_TITLE:
 			Y: 0 - 22
 			Width: PARENT_RIGHT
-			Text: Missions
+			Text: @MISSIONBROWSER-C-TITLE@
 			Align: Center
 			Contrast: true
 			Font: BigBold
@@ -81,7 +81,7 @@ Container@MISSIONBROWSER_PANEL:
 							Y: 365
 							Width: 56
 							Height: 25
-							Text: Difficulty:
+							Text: @MISSIONBROWSER-C-DIFFICULTY-DESC@
 							Align: Right
 						DropDownButton@DIFFICULTY_DROPDOWNBUTTON:
 							X: 61
@@ -94,7 +94,7 @@ Container@MISSIONBROWSER_PANEL:
 							Y: 365
 							Width: 120
 							Height: 25
-							Text: Speed:
+							Text: @MISSIONBROWSER-C-GAMESPEED-DESC@
 							Align: Right
 						DropDownButton@GAMESPEED_DROPDOWNBUTTON:
 							X: PARENT_RIGHT - WIDTH
@@ -106,7 +106,7 @@ Container@MISSIONBROWSER_PANEL:
 			Y: 419
 			Width: 140
 			Height: 35
-			Text: Back
+			Text: @MISSIONBROWSER-C-BACK-BUTTON@
 			Font: Bold
 			Key: escape
 		Button@START_BRIEFING_VIDEO_BUTTON:
@@ -114,35 +114,35 @@ Container@MISSIONBROWSER_PANEL:
 			Y: 419
 			Width: 140
 			Height: 35
-			Text: Watch Briefing
+			Text: @MISSIONBROWSER-C-START-BRIEFING-VIDEO-BUTTON@
 			Font: Bold
 		Button@STOP_BRIEFING_VIDEO_BUTTON:
 			X: PARENT_RIGHT - 290
 			Y: 419
 			Width: 140
 			Height: 35
-			Text: Stop Briefing
+			Text: @MISSIONBROWSER-C-STOP-BRIEFING-VIDEO-BUTTON@
 			Font: Bold
 		Button@START_INFO_VIDEO_BUTTON:
 			X: PARENT_RIGHT - 440
 			Y: 419
 			Width: 140
 			Height: 35
-			Text: Watch Info Video
+			Text: @MISSIONBROWSER-C-START-INFO-VIDEO-BUTTON@
 			Font: Bold
 		Button@STOP_INFO_VIDEO_BUTTON:
 			X: PARENT_RIGHT - 440
 			Y: 419
 			Width: 140
 			Height: 35
-			Text: Stop Info Video
+			Text: @MISSIONBROWSER-C-STOP-INFO-VIDEO-BUTTON@
 			Font: Bold
 		Button@STARTGAME_BUTTON:
 			X: PARENT_RIGHT - 140
 			Y: 419
 			Width: 140
 			Height: 35
-			Text: Play
+			Text: @MISSIONBROWSER-C-STARTGAME-BUTTON@
 			Font: Bold
 		Container@MISSION_BIN:
 			Children:
