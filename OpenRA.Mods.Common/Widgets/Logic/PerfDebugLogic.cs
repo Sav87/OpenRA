@@ -9,6 +9,7 @@
  */
 #endregion
 
+using System.Collections.Generic;
 using System.Diagnostics;
 using OpenRA.Support;
 using OpenRA.Widgets;
@@ -23,14 +24,13 @@ namespace OpenRA.Mods.Common.Widgets.Logic
 			var perfGraph = widget.Get("GRAPH_BG");
 			perfGraph.IsVisible = () => Game.Settings.Debug.PerfGraph;
 
-			string txtPerfText = FieldLoader.Translate("PERFDEBUG-TEXT");
-
 			var perfText = widget.Get<LabelWidget>("PERF_TEXT");
 			perfText.IsVisible = () => Game.Settings.Debug.PerfText;
 
 			var fpsTimer = Stopwatch.StartNew();
 			var fpsReferenceFrame = 0;
 			var fps = 0;
+			Dictionary<string, object> perf = new Dictionary<string, object>();
 			perfText.GetText = () =>
 			{
 				var elapsed = fpsTimer.ElapsedMilliseconds;
@@ -42,10 +42,14 @@ namespace OpenRA.Mods.Common.Widgets.Logic
 					fpsReferenceFrame = Game.RenderFrame;
 				}
 
-				return txtPerfText.F(
-					fps, Game.LocalTick, PerfHistory.Items["tick_time"].Average(Game.Settings.Debug.Samples),
-					Game.RenderFrame, PerfHistory.Items["render"].Average(Game.Settings.Debug.Samples),
-					PerfHistory.Items["batches"].LastValue);
+				perf["fps"] = fps;
+				perf["tik"] = Game.LocalTick;
+				perf["tik_time"] = "{0:F1}".F(PerfHistory.Items["tick_time"].Average(Game.Settings.Debug.Samples));
+				perf["renderFrame"] = Game.RenderFrame;
+				perf["render"] = "{0:F1}".F(PerfHistory.Items["render"].Average(Game.Settings.Debug.Samples));
+				perf["batches"] = PerfHistory.Items["batches"].LastValue;
+
+				return FieldLoader.TranslateUI("PERFDEBUG-TEXT", perf);
 			};
 		}
 	}

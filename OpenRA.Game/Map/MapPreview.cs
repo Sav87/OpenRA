@@ -17,6 +17,7 @@ using System.Linq;
 using System.Net;
 using System.Text;
 using System.Threading;
+using Fluent.Net;
 using OpenRA.FileFormats;
 using OpenRA.FileSystem;
 using OpenRA.Graphics;
@@ -82,7 +83,7 @@ namespace OpenRA
 			public MapStatus Status;
 			public MapClassification Class;
 			public MapVisibility Visibility;
-			public Dictionary<string, string> Translations;
+			public MessageContext Message = null;
 
 			Lazy<Ruleset> rules;
 			public Ruleset Rules { get { return rules != null ? rules.Value : null; } }
@@ -153,7 +154,8 @@ namespace OpenRA
 		public MapClassification Class { get { return innerData.Class; } }
 		public MapVisibility Visibility { get { return innerData.Visibility; } }
 
-		public Dictionary<string, string> Translations { get { return innerData.Translations ?? new Dictionary<string, string>(); } }
+		public Dictionary<string, string> Translations { get { return new Dictionary<string, string>(); } }
+		public MessageContext Message { get { return innerData.Message; } }
 
 		public Ruleset Rules { get { return innerData.Rules; } }
 		public bool InvalidCustomRules { get { return innerData.InvalidCustomRules; } }
@@ -262,11 +264,11 @@ namespace OpenRA
 			if (yaml.TryGetValue("Visibility", out temp))
 				newData.Visibility = FieldLoader.GetValue<MapVisibility>("Visibility", temp.Value);
 
-			yaml.TryGetValue("Translation", out temp);
-			if (temp != null)
+			if (yaml.TryGetValue("Translation", out temp))
 			{
-				var yam = MiniYaml.Load(this, null, temp);
-				newData.Translations = ModData.LoadTranslations(yam);
+				newData.Message = new MessageContext("", new MessageContextOptions() { UseIsolating = false });
+
+				FieldLoader.LoadTranslationsMap(newData.Message, Package.Name);
 			}
 
 			string requiresMod = string.Empty;

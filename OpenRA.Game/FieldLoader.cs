@@ -18,6 +18,7 @@ using System.Linq;
 using System.Reflection;
 using System.Runtime.Serialization;
 using System.Text.RegularExpressions;
+using Fluent.Net;
 using OpenRA.Graphics;
 using OpenRA.Primitives;
 using OpenRA.Support;
@@ -76,8 +77,11 @@ namespace OpenRA
 			new ConcurrentCache<string, IntegerExpression>(expression => new IntegerExpression(expression));
 
 		static readonly object TranslationsLock = new object();
-		static Dictionary<string, string> translations;
-		static Dictionary<string, string> translationsUI;
+
+		static MessageContext ctxUI;
+		static MessageContext ctxMap;
+
+		/* static MessageContext ctxMap;*/
 
 		public static void Load(object self, MiniYaml my)
 		{
@@ -224,7 +228,7 @@ namespace OpenRA
 			else if (fieldType == typeof(string))
 			{
 				if (field != null && MemberHasTranslateAttribute[field] && value != null)
-					return Regex.Replace(value, "@[^@]+@", m => Translate(m.Value.Substring(1, m.Value.Length - 2)), RegexOptions.Compiled);
+					return Regex.Replace(value, "@[^@]+@", m => TranslateUI(m.Value.Substring(1, m.Value.Length - 2)), RegexOptions.Compiled);
 				return value;
 			}
 			else if (fieldType == typeof(Color))
@@ -723,60 +727,95 @@ namespace OpenRA
 			}
 		}
 
-		public static string Translate(string key)
+		public static string Translate(MessageContext ctx, string key,
+			IDictionary<string, object> args = null)
 		{
 			if (string.IsNullOrEmpty(key))
 				return key;
 
 			lock (TranslationsLock)
 			{
-				if (translations == null)
+				if (ctx == null)
 					return key;
 
-				string value;
-				if (!translations.TryGetValue(key, out value))
+				var value = ctx.GetMessage(key);
+
+				if (value == null)
 					return key;
 
-				return value.Replace("\\n", "\n");
+				return ctx.Format(value, args);
 			}
 		}
 
-		/*public static void SetTranslations(IDictionary<string, string> translations)
+		public static string TranslateUI(string key,
+			IDictionary<string, object> args = null)
 		{
-			lock (TranslationsLock)
-				FieldLoader.translations = new Dictionary<string, string>(translations);
-		}*/
+			return Translate(ctxUI, key, args);
+		}
 
-		public static void SetTranslationsUI(IDictionary<string, string> translations, bool ñoncat = false)
+		public static string TranslateMap(string key,
+			IDictionary<string, object> args = null)
 		{
-			lock (TranslationsLock)
+			return Translate(ctxMap, key, args);
+		}
+
+		public static void LoadTranslationsMap(MessageContext context, string path)
+		{
+			Dictionary<string, string> dicc = new Dictionary<string, string>();
+			var ftlFile = Directory.EnumerateFiles(path, "*.ftl");
+			foreach (string file in ftlFile)
 			{
-				FieldLoader.translationsUI = new Dictionary<string, string>(translations);
-				if (ñoncat)
+				string key = Path.GetFileNameWithoutExtension(file);
+				dicc[key] = file;
+			}
+
+			string filename = null;
+
+			if (dicc.ContainsKey(Game.Settings.Graphics.Language))
+				filename = dicc[Game.Settings.Graphics.Language];
+			else if (dicc.ContainsKey(Game.Settings.Graphics.DefaultLanguage))
+				filename = dicc[Game.Settings.Graphics.DefaultLanguage];
+
+			if (!string.IsNullOrEmpty(filename))
+			{
+				using (StreamReader reader = new StreamReader(filename))
 				{
-					AddTransations(translations);
+					FluentResource resource = FluentResource.FromReader(reader);
+					context.AddResource(resource);
 				}
-				else FieldLoader.translations = new Dictionary<string, string>(translations);
 			}
 		}
 
-		public static void SetTranslationsMap(IDictionary<string, string> translations)
+		public static MessageContext CreateContextUI(string locale, bool merge = false)
 		{
-			lock (TranslationsLock)
-			{
-				FieldLoader.translations = new Dictionary<string, string>(translationsUI);
-				AddTransations(translations);
-			}
+			if (!merge || (ctxUI == null))
+				ctxUI = new MessageContext(locale, new MessageContextOptions() { UseIsolating = false });
+
+			return ctxUI;
 		}
 
-		private static void AddTransations(IDictionary<string, string> translations)
+		public static MessageContext CreateContextMap(string locale = "")
 		{
-			if (translations == null) return;
-			foreach (var tkv in translations)
+				return ctxMap = new MessageContext(locale, new MessageContextOptions() { UseIsolating = false });
+		}
+
+		public static void LoadTranslationsUI(string locale, Dictionary<string, List<string>> dicc)
+		{
+			if (((dicc == null) || (ctxUI == null)) || (!dicc.ContainsKey(locale)))
 			{
-				if (FieldLoader.translations.ContainsKey(tkv.Key))
-					continue;
-				FieldLoader.translations.Add(tkv.Key, tkv.Value);
+				return;
+			}
+
+			foreach (string fileName in dicc[locale])
+			{
+				if (File.Exists(fileName))
+				{
+					using (StreamReader reader = new StreamReader(fileName))
+					{
+						FluentResource resource = FluentResource.FromReader(reader);
+						ctxUI.AddResource(resource);
+					}
+				}
 			}
 		}
 	}

@@ -131,7 +131,7 @@ namespace OpenRA.Mods.Common.Widgets.Logic
 
 			if (loosePreviews.Any())
 			{
-				CreateMissionGroup(FieldLoader.Translate("MISSIONBROWSER-GROUP-MISSIONS"), loosePreviews);
+				CreateMissionGroup(FieldLoader.TranslateUI("MISSIONBROWSER-GROUP-MISSIONS"), loosePreviews);
 				allPreviews.AddRange(loosePreviews);
 			}
 
@@ -192,10 +192,11 @@ namespace OpenRA.Mods.Common.Widgets.Logic
 					() => SelectMap(preview),
 					StartMissionClicked);
 
-				var tr = preview.Translations;
-				string txtTitle;
-				if ((tr == null) || (!tr.TryGetValue("MISSION-TITLE", out txtTitle)))
+				string txtTitle = FieldLoader.Translate(preview.Message, "MISSION-TITLE");
+				if (txtTitle == "MISSION-TITLE")
+				{
 					txtTitle = preview.Title;
+				}
 
 				var label = item.Get<LabelWithTooltipWidget>("TITLE");
 				WidgetUtils.TruncateLabelToTooltip(label, txtTitle);
@@ -239,10 +240,11 @@ namespace OpenRA.Mods.Common.Widgets.Logic
 					infoVideo = missionData.BackgroundVideo;
 					infoVideoVisible = infoVideo != null;
 
-					var tr = preview.Translations;
-					string txtbriefing;
-					if ((tr == null) || (!preview.Translations.TryGetValue("MISSION-BRIEFING", out txtbriefing)))
+					string txtbriefing = FieldLoader.Translate(preview.Message, "MISSION-BRIEFING");
+					if (txtbriefing == "MISSION-BRIEFING")
+					{
 						txtbriefing = missionData.Briefing.Replace("\\n", "\n");
+					}
 
 					var briefing = WidgetUtils.WrapText(txtbriefing, description.Bounds.Width, descriptionFont);
 					var height = descriptionFont.Measure(briefing).Y;
@@ -341,9 +343,9 @@ namespace OpenRA.Mods.Common.Widgets.Logic
 			if (!modData.DefaultFileSystem.Exists(video))
 			{
 				ConfirmationDialogs.ButtonPrompt(
-					title: FieldLoader.Translate("MISSIONBROWSER-CONFIRM-TITLE"),
-					text: FieldLoader.Translate("MISSIONBROWSER-CONFIRM-TEXT"),
-					cancelText: FieldLoader.Translate("MISSIONBROWSER-CONFIRM-CANCEL"),
+					title: FieldLoader.TranslateUI("MISSIONBROWSER-CONFIRM-TITLE"),
+					text: FieldLoader.TranslateUI("MISSIONBROWSER-CONFIRM-TEXT"),
+					cancelText: FieldLoader.TranslateUI("MISSIONBROWSER-CONFIRM-CANCEL"),
 					onCancel: () => { });
 			}
 			else

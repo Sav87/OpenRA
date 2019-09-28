@@ -221,7 +221,7 @@ namespace OpenRA.Mods.Common.Widgets.Logic
 				newsPanel.RemoveChild(newsTemplate);
 
 				newsStatus = newsPanel.Get<LabelWidget>("NEWS_STATUS");
-				SetNewsStatus(FieldLoader.Translate("MAINMENU-NEWS-LOADING"));
+				SetNewsStatus(FieldLoader.TranslateUI("MAINMENU-NEWS-LOADING"));
 			}
 
 			Game.OnRemoteDirectConnect += OnRemoteDirectConnect;
@@ -385,7 +385,11 @@ namespace OpenRA.Mods.Common.Widgets.Logic
 			}
 			catch (Exception ex)
 			{
-				SetNewsStatus(FieldLoader.Translate("MAINMENU-NEWS-FAILED-PARSE").F(ex.Message));
+				SetNewsStatus(FieldLoader.TranslateUI("MAINMENU-NEWS-FAILED-PARSE",
+					new Dictionary<string, object>()
+					{
+						{ "error", ex.Message }
+					}));
 			}
 
 			return null;
@@ -397,7 +401,11 @@ namespace OpenRA.Mods.Common.Widgets.Logic
 			{
 				if (e.Error != null)
 				{
-					SetNewsStatus(FieldLoader.Translate("MAINMENU-NEWS-FAILED-RETRIEVE").F(Download.FormatErrorMessage(e.Error)));
+					SetNewsStatus(FieldLoader.TranslateUI("MAINMENU-NEWS-FAILED-RETRIEVE",
+					new Dictionary<string, object>()
+					{
+						{ "error", Download.FormatErrorMessage(e.Error) }
+					}));
 					return;
 				}
 
@@ -418,6 +426,8 @@ namespace OpenRA.Mods.Common.Widgets.Logic
 			newsPanel.RemoveChildren();
 			SetNewsStatus("");
 
+			Dictionary<string, object> author_arg = new Dictionary<string, object>();
+
 			foreach (var i in newsItems)
 			{
 				var item = i;
@@ -428,7 +438,9 @@ namespace OpenRA.Mods.Common.Widgets.Logic
 				titleLabel.GetText = () => item.Title;
 
 				var authorDateTimeLabel = newsItem.Get<LabelWidget>("AUTHOR_DATETIME");
-				var authorDateTime = FieldLoader.Translate("MAINMENU-NEWS-AUTHORDATETIME-FORMAT").F(item.Author, item.DateTime.ToLocalTime());
+				author_arg["author"] = item.Author;
+				author_arg["localTime"] = item.DateTime.ToLocalTime();
+				var authorDateTime = FieldLoader.TranslateUI("MAINMENU-NEWS-AUTHORDATETIME-FORMAT", author_arg);
 				authorDateTimeLabel.GetText = () => authorDateTime;
 
 				var contentLabel = newsItem.Get<LabelWidget>("CONTENT");

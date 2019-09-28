@@ -65,6 +65,7 @@
     <ProjectReference Include="..\OpenRA.PostProcess\OpenRA.PostProcess.csproj">
       <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
     </ProjectReference>
+    <ProjectReference Include="..\thirdparty\Fluent.Net\Fluent.Net.csproj" />
     <None Include="App.config" />
     <PackageReference Include="StyleCop.Analyzers" Version="1.1.118" /> 
     <AdditionalFiles Include="../stylecop.json" />

@@ -196,8 +196,8 @@ namespace OpenRA.Mods.Common.Widgets.Logic
 			BindCheckboxPref(panel, "PLAYER_STANCE_COLORS_CHECKBOX", gs, "UsePlayerStanceColors");
 
 			var languageDropDownButton = panel.Get<DropDownButtonWidget>("LANGUAGE_DROPDOWNBUTTON");
-			languageDropDownButton.OnMouseDown = _ => ShowLanguageDropdown(languageDropDownButton, modData.Languages);
-			languageDropDownButton.GetText = () => FieldLoader.Translate(ds.Language);
+			languageDropDownButton.OnMouseDown = _ => ShowLanguageDropdown(languageDropDownButton);
+			languageDropDownButton.Text = (modData.Cultures.ContainsKey(ds.Language)) ? modData.Cultures[ds.Language].EnglishName : "???";
 
 			var windowModeDropdown = panel.Get<DropDownButtonWidget>("MODE_DROPDOWN");
 			windowModeDropdown.OnMouseDown = _ => ShowWindowModeDropdown(windowModeDropdown, ds);
@@ -683,19 +683,25 @@ namespace OpenRA.Mods.Common.Widgets.Logic
 			dropdown.ShowDropDown("LABEL_DROPDOWN_TEMPLATE", 500, options.Keys, setupItem);
 		}
 
-		static void ShowLanguageDropdown(DropDownButtonWidget dropdown, IEnumerable<string> languages)
+		void ShowLanguageDropdown(DropDownButtonWidget dropdown)
 		{
-			Func<string, ScrollItemWidget, ScrollItemWidget> setupItem = (o, itemTemplate) =>
+			Func<System.Globalization.CultureInfo, ScrollItemWidget, ScrollItemWidget> setupItem = (o, itemTemplate) =>
 			{
+				string lang = o.EnglishName;
 				var item = ScrollItemWidget.Setup(itemTemplate,
-					() => Game.Settings.Graphics.Language == o,
-					() => Game.Settings.Graphics.Language = o);
+					() =>
+					Game.Settings.Graphics.Language == lang,
+					() =>
+					{
+						dropdown.Text = lang;
+						Game.Settings.Graphics.Language = o.Name;
+					});
 
-				item.Get<LabelWidget>("LABEL").GetText = () => FieldLoader.Translate(o);
+				item.Get<LabelWidget>("LABEL").GetText = () => lang;
 				return item;
 			};
 
-			dropdown.ShowDropDown("LABEL_DROPDOWN_TEMPLATE", 500, languages, setupItem);
+			dropdown.ShowDropDown("LABEL_DROPDOWN_TEMPLATE", 500, modData.Cultures.Values, setupItem);
 		}
 
 		static void ShowStatusBarsDropdown(DropDownButtonWidget dropdown, GameSettings s)

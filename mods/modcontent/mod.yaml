@@ -68,5 +68,5 @@ SpriteSequenceFormat: DefaultSpriteSequence
 ModelSequenceFormat: PlaceholderModelSequence
 
 Translations:
-	modcontent|languages/english.yaml
-	modcontent|languages/russian.yaml
+	modcontent|languages/en.ftl
+	modcontent|languages/ru.ftl

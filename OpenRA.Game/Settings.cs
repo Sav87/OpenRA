@@ -167,7 +167,7 @@ namespace OpenRA
 		public int SheetSize = 2048;
 
 		public string Language = "";
-		public string DefaultLanguage = "english";
+		public string DefaultLanguage = "en";
 	}
 
 	public class SoundSettings

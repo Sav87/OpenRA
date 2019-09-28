@@ -143,9 +143,8 @@ Music:
 	ra|audio/music.yaml
 
 Translations:
-	common|languages/english.yaml
-    common|languages/russian.yaml 
-	ra|languages/english.yaml
+	common|languages/en.ftl
+	common|languages/ru.ftl
 
 Hotkeys:
 	common|hotkeys/game.yaml

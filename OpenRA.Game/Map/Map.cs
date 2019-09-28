@@ -172,8 +172,7 @@ namespace OpenRA
 			new MapField("Weapons", "WeaponDefinitions", required: false),
 			new MapField("Voices", "VoiceDefinitions", required: false),
 			new MapField("Music", "MusicDefinitions", required: false),
-			new MapField("Notifications", "NotificationDefinitions", required: false),
-			new MapField("Translations", "TranslationDefinitions", required: false)
+			new MapField("Notifications", "NotificationDefinitions", required: false)
 		};
 
 		// Format versions
@@ -205,7 +204,7 @@ namespace OpenRA
 		public readonly MiniYaml MusicDefinitions;
 		public readonly MiniYaml NotificationDefinitions;
 		public readonly MiniYaml TranslationDefinitions;
-		public readonly Dictionary<string, string> Translations;
+		public bool Translation = false;
 
 		// Generated data
 		public readonly MapGrid Grid;
@@ -331,11 +330,12 @@ namespace OpenRA
 			PlayerDefinitions = MiniYaml.NodesOrEmpty(yaml, "Players");
 			ActorDefinitions = MiniYaml.NodesOrEmpty(yaml, "Actors");
 
-			yaml.ToDictionary().TryGetValue("Translation", out TranslationDefinitions);
-			if (TranslationDefinitions != null)
+			if (yaml.ToDictionary().TryGetValue("Translation", out TranslationDefinitions))
 			{
-				var yam = MiniYaml.Load(modData.ModFiles, null, TranslationDefinitions);
-				Translations = ModData.LoadTranslations(yam);
+				if (TranslationDefinitions.Value == "true")
+				{
+					Translation = true;
+				}
 			}
 
 			Grid = modData.Manifest.Get<MapGrid>();

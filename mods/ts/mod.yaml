@@ -185,9 +185,9 @@ Music:
 	ts|audio/music.yaml
 
 Translations:
-	common|languages/english.yaml
-    common|languages/russian.yaml 
-	ts|languages/english.yaml
+	common|languages/en.ftl
+    common|languages/ru.ftl
+	ts|languages/en.ftl
 
 Hotkeys:
 	common|hotkeys/game.yaml

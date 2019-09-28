@@ -59,7 +59,7 @@ namespace OpenRA
 			ModFiles.LoadFromManifest(Manifest);
 			Manifest.LoadCustomData(ObjectCreator);
 
-			LoadTranslationsUI(mod.Id == "modcontent");
+			LoadTranslationsUI(mods);
 
 			if (useLoadScreen)
 			{
@@ -140,58 +140,66 @@ namespace OpenRA
 		}
 
 		public IEnumerable<string> Languages { get; private set; }
+		public Dictionary<string, System.Globalization.CultureInfo> Cultures = new Dictionary<string, System.Globalization.CultureInfo>();
 
-		void LoadTranslationsUI(bool ñoncat = false)
+		void LoadTranslationsUI(InstalledMods mods)
 		{
-			var translations = new Dictionary<string, string>();
-
 			if (!Manifest.Translations.Any())
 			{
 				Languages = new string[0];
+				return;
 			}
-			else
+
+			Dictionary<string, List<string>> dicc = new Dictionary<string, List<string>>();
+			foreach (string tr in Manifest.Translations)
 			{
-				var yaml = MiniYaml.Load(ModFiles, Manifest.Translations, null);
-				Languages = yaml.Select(t => t.Key).ToArray();
+				string fileName = FS.ResolveAssemblyPath(tr, Manifest, mods);
+				string key = Path.GetFileNameWithoutExtension(fileName);
+				if (File.Exists(fileName) && (!string.IsNullOrEmpty(key)))
+				{
+					try
+					{
+						Cultures[key] = new System.Globalization.CultureInfo(Path.GetFileNameWithoutExtension(fileName));
+					}
+					catch (Exception e)
+					{
+						Console.WriteLine(e.Message);
+						continue;
+					}
 
-				translations = LoadTranslations(yaml);
+					if (!dicc.ContainsKey(key))
+					{
+						dicc.Add(key, new List<string>());
+					}
+
+					dicc[key].Add(fileName);
+				}
 			}
 
-			FieldLoader.SetTranslationsUI(translations, ñoncat);
-		}
+			Languages = dicc.Select(t => t.Key).ToArray();
 
-		public static Dictionary<string, string> LoadTranslations(List<MiniYamlNode> yaml)
-		{
-			var selectedTranslations = new Dictionary<string, string>();
-			var defaultTranslations = new Dictionary<string, string>();
-			var translations = new Dictionary<string, string>();
-
-			foreach (var y in yaml)
+			if (!dicc.ContainsKey(Game.Settings.Graphics.DefaultLanguage))
 			{
-				if (y.Key == Game.Settings.Graphics.Language)
-					selectedTranslations = y.Value.ToDictionary(my => my.Value ?? "");
-				else if (y.Key == Game.Settings.Graphics.DefaultLanguage)
-					defaultTranslations = y.Value.ToDictionary(my => my.Value ?? "");
+				Console.WriteLine("Default language not found");
 			}
 
-			foreach (var tkv in defaultTranslations.Concat(selectedTranslations))
+			string locale = Game.Settings.Graphics.Language;
+
+			if (!dicc.ContainsKey(locale))
 			{
-				if (translations.ContainsKey(tkv.Key))
-					continue;
-				if (selectedTranslations.ContainsKey(tkv.Key))
-					translations.Add(tkv.Key, selectedTranslations[tkv.Key]);
-				else
-					translations.Add(tkv.Key, tkv.Value);
+				Console.WriteLine("language not found load Default language");
+				locale = Game.Settings.Graphics.DefaultLanguage;
 			}
 
-			return translations;
+			FieldLoader.CreateContextUI(locale, Manifest.Id == "modcontent");
+
+			FieldLoader.LoadTranslationsUI(locale, dicc);
 		}
 
 		void LoadTranslationsMap(Map map)
 		{
-			var translations = map.Translations;
-
-			FieldLoader.SetTranslationsMap(translations);
+			Fluent.Net.MessageContext ctx = FieldLoader.CreateContextMap();
+			FieldLoader.LoadTranslationsMap(ctx, map.Package.Name);
 		}
 
 		public Map PrepareMap(string uid)

@@ -127,10 +127,10 @@ Music:
 	d2k|audio/music.yaml
 
 Translations:
-	common|languages/english.yaml
-	common|languages/russian.yaml 
-	d2k|languages/english.yaml 
-	d2k|languages/russian.yaml
+	common|languages/ru.ftl
+	d2k|languages/ru.ftl
+	common|languages/en.ftl
+	d2k|languages/en.ftl
 
 Hotkeys:
 	common|hotkeys/game.yaml

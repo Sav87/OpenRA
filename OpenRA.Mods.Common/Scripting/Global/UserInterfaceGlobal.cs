@@ -35,7 +35,7 @@ namespace OpenRA.Mods.Common.Scripting.Global
 
 		public string GetTranslation(string text)
 		{
-			return FieldLoader.Translate(text);
+			return FieldLoader.TranslateMap(text);
 		}
 	}
 }
